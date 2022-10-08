@@ -31,6 +31,7 @@ Car.init(
         type: DataTypes.BOOLEAN, 
         allowNull: false,
     },
+  },
   {
     sequelize,
     freezeTableName: true,
