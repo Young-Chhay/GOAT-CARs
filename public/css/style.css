@@ -6,27 +6,40 @@ body {
 /* Navbar CSS customize */
 .navbar {
     font-size: 120%;
-    padding-left: 15px;
+    padding-left: 50px;
     background-color: #EEEEEE;
 }
 
 .nav-selection {
-    margin-left: 30px;
+    margin-left: 50px;
 }
 .nav-selection a {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.has-bg-img {
-    background-size: cover;
+/* main page */
+.custom-container {
+    position: relative;
+    text-align: center;
 }
-
-.text-white {
-    color: white;
+.main-logo {
+    width: 20%;
+    position: absolute;
+    top: 15%;
+    left: 15%;
 }
-
-.background-image {
-    background-image: url('../images/Home.png');
-    height: 100vh;
+.main-image {
+     width:100%;
+}
+.text-section-image {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    display: flex;
+}
+.quote-box {
+    position: absolute;
+    top: 10%;
+    right: 25%;
 }
