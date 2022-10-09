@@ -17,3 +17,16 @@ body {
     margin-left: 5px;
     margin-right: 5px;
 }
+
+.has-bg-img {
+    background-size: cover;
+}
+
+.text-white {
+    color: white;
+}
+
+.background-image {
+    background-image: url('../images/Home.png');
+    height: 100vh;
+}
