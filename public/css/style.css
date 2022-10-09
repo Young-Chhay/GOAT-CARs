@@ -43,3 +43,6 @@ body {
     top: 10%;
     right: 25%;
 }
+.custom-font-size {
+    font-size: 3vh;
+}
