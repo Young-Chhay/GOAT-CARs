@@ -11,7 +11,7 @@
     <title>G.O.A.T CAR</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg fixed-top bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="./images/GOAT CAR logo.png" alt="logo image" width="75" height="75" class="d-inline-block align-text-top">
@@ -22,13 +22,17 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav nav-selection">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="#login">Login</a>
+                    <a class="nav-link" href="#features">Features</a>
+                    <a class="nav-link" href="#">Auction</a>
+                    <a class="nav-link" href="#">TESTIMONIAL</a>
+                    <a class="nav-link" href="#">CONTACT US</a>
                 </div>
             </div>
         </div>
     </nav>
+    <div class="contianer space-nav">
+    </div>
     <div class="custom-container">
         <img src="./images/Home-main-wide2.png" class="main-image" alt="main homepage background image">
         <img src="./images/G.O.A.T.png" alt="logo" class="main-logo">
@@ -37,8 +41,43 @@
             <h3 class="custom-font-size">LIFE would have no peace"</h3>
         </div>
     </div>
-    <div class="bg-light container-fluid min-height">
-        testing
+    <div class="bg-light min-height row" id="login">
+        <div class="col-md-6 text-center position-relative">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h2> Login </h2>
+                <form class="form login-form">
+                    <div class="form-group">
+                        <input class="form-input form-control" type="text" id="email-login" placeholder="placeholder@email.com" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-input form-control" type="password" id="password-login" placeholder="password:">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">login</button>
+                    </div>
+                </form>
+            </div>  
+        </div>
+        <div class="col-md-6 text-center position-relative">
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <h2>Signup</h2>
+
+                <form class="form signup-form">
+                    <div class="form-group">
+                        <input class="form-input form-control" type="text" id="name-signup" placeholder="name:" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-input form-control" type="text" id="email-signup" placeholder="placeholder@email.com"/>
+                    </div>
+                    <div class = "form-group">
+                        <input class="form-input form-control" type="password" id="password-signup" placeholder="password:" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">signup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <div>
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -72,6 +111,29 @@
             </button>
         </div>
     </div>
+    <div class="contianer-fluid bg-light min-height text-center" id="features">
+        <h1>Features</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Gallery</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>Forum</h2>
+            </div>
+        </div>
+    </div>
+    <div id="auction" class="container-fluid min-height text-center text-white">
+        <h1>AUCTION</h1>
+    </div>
+    <div id="testimonial" class="container-fluid min-height text-center bg-light">
+        <h1>TESTIMONIAL</h1>
+    </div>
+    <div id="contactUs" class="container-fluid min-height text-center text-white">
+        <h1>CONTACT US</h1>
+    </div>
+    <footer class="bg-light text-center">
+        2022 TEAM FIVE GOAT CARS
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

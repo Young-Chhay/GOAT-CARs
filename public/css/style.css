@@ -1,7 +1,9 @@
 /* Whole Body */
 body {
     background-color: #222831;
+    overflow-x: hidden;
 }
+
 
 /* Navbar CSS customize */
 .navbar {
@@ -11,14 +13,18 @@ body {
 }
 
 .nav-selection {
-    margin-left: 50px;
+    padding-left: 50px;
 }
 .nav-selection a {
     margin-left: 10px;
     margin-right: 10px;
 }
+.space-nav {
+    min-height:100px;
+}
 
 /* main page */
+
 .custom-container {
     position: relative;
     text-align: center;
@@ -51,4 +57,13 @@ body {
 /* Login Page */
 .min-height {
     min-height: 70vh;
+}
+.form {
+    margin-top:30px;
+}
+.form-group {
+    margin: 20px;
+}
+.btn-primary {
+    width: 100%;
 }
