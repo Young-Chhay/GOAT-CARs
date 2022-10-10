@@ -46,3 +46,9 @@ body {
 .custom-font-size {
     font-size: 3vh;
 }
+
+
+/* Login Page */
+.min-height {
+    min-height: 70vh;
+}
