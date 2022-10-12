@@ -1,63 +1,62 @@
 const router = require('express').Router();
-const { User, Car, Sale } = require('../../models');
+const { User, Car, Auction } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Get all cars in the inventory 
+// Auction routes
 router.get('/', (req, res) => {
-    Car.findAll({
+    Auction.findAll({
         attributes: [
             'id',
-            'make',
-            'model',
-            'year',
-            'color',
-            'price',
-            'seller_id',
-            'buyer_id'
+            'car_id',
+            'user_id',
+            'auction_date'
         ],
         include: [
+            {
+                model: Car,
+                attributes: ['make', 'model', 'year', 'color', 'price']
+            },
             {
                 model: User,
                 attributes: ['username']
             }
         ]
     })
-        .then(dbCarData => res.json(dbCarData))
+        .then(dbAuctionData => res.json(dbAuctionData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
 
-// Get a single car
 router.get('/:id', (req, res) => {
-    Car.findOne({
+    Auction.findOne({
         where: {
             id: req.params.id
         },
         attributes: [
             'id',
-            'make',
-            'model',
-            'year',
-            'color',
-            'price',
-            'seller_id',
-            'buyer_id'
+            'car_id',
+            'user_id',
+            'auction_date'
         ],
         include: [
+            {
+                model: Car,
+                attributes: ['make', 'model', 'year', 'color', 'price']
+            },
             {
                 model: User,
                 attributes: ['username']
             }
         ]
     })
-        .then(dbCarData => {
-            if (!dbCarData) {
-                res.status(404).json({ message: 'No car found with this id' });
+        .then(dbAuctionData => {
+            if (!dbAuctionData) {
+                res.status(404).json({ message: 'No auction found with this id' });
                 return;
             }
-            res.json(dbCarData);
+            res.json(dbAuctionData);
         })
         .catch(err => {
             console.log(err);
@@ -65,33 +64,25 @@ router.get('/:id', (req, res) => {
         });
 });
 
-// Create a new car
 router.post('/', withAuth, (req, res) => {
-    Car.create({
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        color: req.body.color,
-        price: req.body.price,
-        seller_id: req.session.user_id
+    Auction.create({
+        car_id: req.body.car_id,
+        user_id: req.session.user_id,
+        sale_date: req.body.sale_date
     })
-        .then(dbCarData => res.json(dbCarData))
+        .then(dbAuctionData => res.json(dbAuctionData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
 
-// Update a car
 router.put('/:id', withAuth, (req, res) => {
-    Car.update(
+    Auction.update(
         {
-            make: req.body.make,
-            model: req.body.model,
-            year: req.body.year,
-            color: req.body.color,
-            price: req.body.price,
-            seller_id: req.session.user_id
+            car_id: req.body.car_id,
+            user_id: req.session.user_id,
+            sale_date: req.body.sale_date
         },
         {
             where: {
@@ -99,12 +90,12 @@ router.put('/:id', withAuth, (req, res) => {
             }
         }
     )
-        .then(dbCarData => {
-            if (!dbCarData) {
-                res.status(404).json({ message: 'No car found with this id' });
+        .then(dbAuctionData => {
+            if (!dbAuctionData) {
+                res.status(404).json({ message: 'No auction found with this id' });
                 return;
             }
-            res.json(dbCarData);
+            res.json(dbAuctionData);
         })
         .catch(err => {
             console.log(err);
@@ -112,19 +103,18 @@ router.put('/:id', withAuth, (req, res) => {
         });
 });
 
-// Delete a car
 router.delete('/:id', withAuth, (req, res) => {
-    Car.destroy({
+    Auction.destroy({
         where: {
             id: req.params.id
         }
     })
-        .then(dbCarData => {
-            if (!dbCarData) {
-                res.status(404).json({ message: 'No car found with this id' });
+        .then(dbAuctionData => {
+            if (!dbAuctionData) {
+                res.status(404).json({ message: 'No auction found with this id' });
                 return;
             }
-            res.json(dbCarData);
+            res.json(dbAuctionData);
         })
         .catch(err => {
             console.log(err);
