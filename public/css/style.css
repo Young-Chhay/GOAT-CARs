@@ -67,3 +67,9 @@ body {
 .btn-primary {
     width: 100%;
 }
+
+
+.login-background {
+    background-image: url("../images/background-login.png");
+    min-height:85vh;
+}
