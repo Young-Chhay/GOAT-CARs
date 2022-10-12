@@ -54,7 +54,7 @@ body {
 }
 
 
-/* Login Page */
+/* Login Section in Main */
 .min-height {
     min-height: 70vh;
 }
@@ -69,7 +69,49 @@ body {
 }
 
 
+/* Login Page */
 .login-background {
     background-image: url("../images/background-login.png");
     min-height:85vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+
+.login-card {
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.login-form {
+    width: 100%;
+}
+.login-form-title {
+    display: block;
+    font-family: Poppins-Bold;
+    font-size: 39px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+/* Reponsive */
+
+@media (max-width: 576px) {
+    .login-card {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  } 
