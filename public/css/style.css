@@ -95,7 +95,19 @@ body {
     padding: 20px 10px 10px 10px;
 }
 
-
+/* FORUM PAGE */
+.forum-background {
+    background-color: #ECf0FE
+}
+.forum-nav {
+    background-color: #ECf0FE;
+}
+.temp-color {
+    background: lightpink;
+}
+.temp-color2 {
+    background: lightcoral;
+}
 
 /* Reponsive */
 
