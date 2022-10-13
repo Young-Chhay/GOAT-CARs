@@ -114,6 +114,12 @@ body {
     font-family: 'Permanent Marker';
     font-size: 4rem;
 }
+.forum-button-width {
+    width: 15%;
+}
+.forum-btn {
+    width: 20%;
+}
 /* Reponsive */
 
 @media (max-width: 576px) {
