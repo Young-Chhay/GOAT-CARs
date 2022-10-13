@@ -108,7 +108,12 @@ body {
 .temp-color2 {
     background: lightcoral;
 }
-
+.forum-category-name h1 {
+    padding-top:3%;
+    padding-bottom:3%;
+    font-family: 'Permanent Marker';
+    font-size: 4rem;
+}
 /* Reponsive */
 
 @media (max-width: 576px) {
