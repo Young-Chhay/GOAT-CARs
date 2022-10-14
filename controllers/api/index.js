@@ -8,7 +8,7 @@ const saleRoutes = require('./sale-routes');
 router.use('/cars', carRoutes);
 router.use('/users', userRoutes);
 router.use('/sales', saleRoutes);
-// router.use('/', homeRoutes);
+router.use('/', homeRoutes);
 
 router.use((req, res) => {
     res.status(404).end();
