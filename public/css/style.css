@@ -3,7 +3,13 @@ body {
     background-color: #222831;
     overflow-x: hidden;
 }
-
+footer {
+    padding-top: 10px;
+    min-height: 50px;
+}
+.main-page {
+   padding-bottom: 200px; 
+}
 
 /* Navbar CSS customize */
 .navbar {
@@ -54,7 +60,7 @@ body {
 }
 
 
-/* Login Page */
+/* Login Section in Main */
 .min-height {
     min-height: 70vh;
 }
@@ -69,7 +75,62 @@ body {
 }
 
 
+/* Login Page */
 .login-background {
     background-image: url("../images/background-login.png");
     min-height:85vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+
+.login-card {
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px 10px 10px 10px;
+}
+
+/* FORUM PAGE */
+.forum-background {
+    background-color: #ECf0FE
+}
+.forum-nav {
+    background-color: #ECf0FE;
+}
+.temp-color {
+    background: lightpink;
+}
+.temp-color2 {
+    background: lightcoral;
+}
+.forum-category-name h1 {
+    padding-top:3%;
+    padding-bottom:3%;
+    font-family: 'Permanent Marker';
+    font-size: 4rem;
+}
+.forum-button-width {
+    width: 15%;
+}
+.forum-btn {
+    width: 20%;
+}
+/* Reponsive */
+
+@media (max-width: 576px) {
+    .login-card {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  } 
