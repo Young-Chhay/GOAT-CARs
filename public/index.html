@@ -46,8 +46,8 @@
     <div class="container space-nav">
     </div>
     <main>
-        <!-- -------------------------------------------FORUM PAGE---------------------------------------------------- -->
-        <div class="forum-background min-height">
+        <!-- -------------------------------------------FORUM ALL POST PAGE---------------------------------------------------- -->
+        <!-- <div class="forum-background min-height">
             <div class="container p-t-15">
                 <nav class="navbar navbar-expand-lg forum-nav">
                     <div class="container">
@@ -71,142 +71,239 @@
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
                         </div>                        
-                        
                     </div>
-                    
                 </nav>
                 <hr>
             </div>
-                <main class="main-page">
-                    <div class="forum-category-name text-center">
-                        <h1>Forum</h1>
+            <div class="forum-category-name text-center">
+                <h1>Forum</h1>
+            </div>
+            <main class="main-page">
+                <div class="forum-box container">
+                    <table class="table table-light">
+                        <thead>
+                            <tr>
+                                <td scope="col">Sort by: Recent Activity</td>
+                                <td scope="col">
+                                    <div class="text-right m-b-15">
+                                        <button type="button" class="btn btn-primary" style="width: 30%">Create New Post</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">msg.</th>
+                                <th scope="col">likes</th>
+                                <th scope="col">views</th>
+                                <th scope="col">Recent Activity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Each Post</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Date</td>
+                            </tr>
+                            <tr>
+                                <td>Each Post</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Date</td>
+                            </tr>
+                            <tr>
+                                <td>Each Post</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Date</td>
+                            </tr>
+                            <tr>
+                                <td>Each Post</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Date</td>
+                            </tr>
+                            <tr>
+                                <td>Each Post</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Date</td>
+                            </tr>
+                            <tr>
+                                <td>Each Post</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Date</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div> -->
+        <!-- -------------------------------------------FORUM MAIN PAGE---------------------------------------------------- -->
+        <!-- <div class="forum-background min-height">
+            <div class="container p-t-15">
+                <nav class="navbar navbar-expand-lg forum-nav">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Categories</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">All Posts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">My Posts</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input class="form-control forum-nav-input me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>                        
                     </div>
-                    <div class="forum-box container">
-                        <div class="text-right m-b-15">
-                            <button type="button" class="btn btn-primary forum-button-width">Create New Post</button>
-                        </div>
-                        <div class="forum-category-list row row-cols-1 row-cols-md-2 g-4">
+                </nav>
+                <hr>
+            </div>
+            <div class="forum-category-name text-center">
+                <h1>Forum</h1>
+            </div>
+            <main class="main-page">
+                <div class="forum-box container">
+                    <div class="text-right m-b-15">
+                        <button type="button" class="btn btn-primary forum-button-width">Create New Post</button>
+                    </div>
+                    <div class="forum-category-list row row-cols-1 row-cols-md-2 g-4">
 
-                            <div class="col">
-                                <div class="card" href="#">
-                                    <img src="./images/forum-categories/showcars.png" class="card-img-top" alt="cars shown">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Car Review</h3>
-                                        <p class="card-text">This is the category for people who wants to share about their cars' information! ASK each others about the cars! </p>
-                                        <a href="#" class="btn btn-primary stretched-link m-t-15 m-b-10 forum-btn">Explore!</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card" href="#">
-                                    <img src="./images/forum-categories/askprice.png" class="card-img-top" alt="image of letter 'price' and car">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Ask Price</h3>
-                                        <p class="card-text">This is the category for people who wants to know the price of their cars that they are going to sell it!</p>
-                                        <a href="#" class="btn btn-primary stretched-link m-t-15 m-b-10 forum-btn">Explore!</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card" href="#">
-                                    <img src="./images/forum-categories/maintenance.png" class="card-img-top" alt="cars shown">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Maintenance Talk</h3>
-                                        <p class="card-text">This is the category for people who wants to share how to take care of car maintenance!</p>
-                                        <a href="#" class="btn btn-primary stretched-link m-t-15 m-b-10 forum-btn">Explore!</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card" href="#">
-                                    <img src="./images/forum-categories/freetalk.png" class="card-img-top" alt="cars shown">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Free Talk</h3>
-                                        <p class="card-text">This is the category for people who wants to have free conversation each other. The topics can be any! Please have appropriate conversation in this category! </p>
-                                        <a href="#" class="btn btn-primary stretched-link m-t-15 m-b-10 forum-btn">Explore!</a>
-                                    </div>
+                        <div class="col">
+                            <div class="card" href="#">
+                                <img src="./images/forum-categories/showcars.png" class="card-img-top" alt="cars shown">
+                                <div class="card-body">
+                                    <h3 class="card-title">Car Review</h3>
+                                    <p class="card-text">This is the category for people who wants to share about their cars' information! ASK each others about the cars! </p>
+                                    <a href="#" class="btn btn-primary stretched-link m-t-15 m-b-10 forum-btn">Explore!</a>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="text-left m-t-20">
-                                New Posts
+                        <div class="col">
+                            <div class="card" href="#">
+                                <img src="./images/forum-categories/askprice.png" class="card-img-top" alt="image of letter 'price' and car">
+                                <div class="card-body">
+                                    <h3 class="card-title">Ask Price</h3>
+                                    <p class="card-text">This is the category for people who wants to know the price of their cars that they are going to sell it!</p>
+                                    <a href="#" class="btn btn-primary stretched-link m-t-15 m-b-10 forum-btn">Explore!</a>
+                                </div>
                             </div>
-                            <div class="row row-cols-1 row-cols-md-3 g-4">
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    Profil
-                                                </div>
-                                                <div class="col-10">
-                                                    <h6>User</h6>
-                                                    <h6>Date</h6>
-                                                </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" href="#">
+                                <img src="./images/forum-categories/maintenance.png" class="card-img-top" alt="cars shown">
+                                <div class="card-body">
+                                    <h3 class="card-title">Maintenance Talk</h3>
+                                    <p class="card-text">This is the category for people who wants to share how to take care of car maintenance!</p>
+                                    <a href="#" class="btn btn-primary stretched-link m-t-15 m-b-10 forum-btn">Explore!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" href="#">
+                                <img src="./images/forum-categories/freetalk.png" class="card-img-top" alt="cars shown">
+                                <div class="card-body">
+                                    <h3 class="card-title">Free Talk</h3>
+                                    <p class="card-text">This is the category for people who wants to have free conversation each other. The topics can be any! Please have appropriate conversation in this category! </p>
+                                    <a href="#" class="btn btn-primary stretched-link m-t-15 m-b-10 forum-btn">Explore!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-left m-t-20">
+                            New Posts
+                        </div>
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Profil
                                             </div>
-                                            <h5 class="m-t-10">Post Title</h5>
-                                            <h6 class="m-t-7">Category</h6>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col">
-                                                    Comments
-                                                </div>
-                                                <div class="col">
-                                                    Likes
-                                                </div>
+                                            <div class="col-10">
+                                                <h6>User</h6>
+                                                <h6>Date</h6>
+                                            </div>
+                                        </div>
+                                        <h5 class="m-t-10">Post Title</h5>
+                                        <h6 class="m-t-7">Category</h6>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col">
+                                                Comments
+                                            </div>
+                                            <div class="col">
+                                                Likes
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    Profil
-                                                </div>
-                                                <div class="col-10">
-                                                    <h6>User</h6>
-                                                    <h6>Date</h6>
-                                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Profil
                                             </div>
-                                            <h5 class="m-t-10">Post Title</h5>
-                                            <h6 class="m-t-7">Category</h6>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col">
-                                                    Comments
-                                                </div>
-                                                <div class="col">
-                                                    Likes
-                                                </div>
+                                            <div class="col-10">
+                                                <h6>User</h6>
+                                                <h6>Date</h6>
+                                            </div>
+                                        </div>
+                                        <h5 class="m-t-10">Post Title</h5>
+                                        <h6 class="m-t-7">Category</h6>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col">
+                                                Comments
+                                            </div>
+                                            <div class="col">
+                                                Likes
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    Profil
-                                                </div>
-                                                <div class="col-10">
-                                                    <h6>User</h6>
-                                                    <h6>Date</h6>
-                                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-2">
+                                                Profil
                                             </div>
-                                            <h5 class="m-t-10">Post Title</h5>
-                                            <h6 class="m-t-7">Category</h6>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col">
-                                                    Comments
-                                                </div>
-                                                <div class="col">
-                                                    Likes
-                                                </div>
+                                            <div class="col-10">
+                                                <h6>User</h6>
+                                                <h6>Date</h6>
+                                            </div>
+                                        </div>
+                                        <h5 class="m-t-10">Post Title</h5>
+                                        <h6 class="m-t-7">Category</h6>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col">
+                                                Comments
+                                            </div>
+                                            <div class="col">
+                                                Likes
                                             </div>
                                         </div>
                                     </div>
@@ -214,8 +311,9 @@
                             </div>
                         </div>
                     </div>
-                </main>
-        </div>
+                </div>
+            </main>
+        </div> -->
         <!-- -------------------------------------------LOGIN PAGE---------------------------------------------------- -->
         <!-- <div class="login-background">
             <div class="login-card">
