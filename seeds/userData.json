@@ -1,0 +1,31 @@
+[
+    {
+      "name": "Young",
+      "email": "young@gmail.com",
+      "password": "password12345",
+      "carown": "White Mustang",
+      "carmadeyear": "1964"
+    },
+    {
+      "name": "Drum Hollidday",
+      "email": "Drum@gmail.com",
+      "password": "drumpassword12345",
+      "carown": "Purple Mustang",
+      "carmadeyear": "1965"
+    },
+    {
+      "name": "Richard",
+      "email": "Richard0@gmail.com",
+      "password": "richardpassword12345",
+      "carown": "Black Mustang",
+      "carmadeyear": "1970"
+    },
+    {
+        "name": "Nathan Underwood",
+        "email": "Nathan@gmail.com",
+        "password": "nathanpassword54321",
+        "carown": "Yellow Mustang",
+        "carmadeyear": "1964"
+    }
+  ]
+  
