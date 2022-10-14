@@ -31,17 +31,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav nav-selection">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    {{#if logged_in}}
-                    <a class="nav-link" href="/profile">PROFILE</a>
-                    <button class="no-button" id="logout">LOGOUT</button>
-                    {{else}}
-                    <a class="nav-link" href="/login">LOGIN</a>
-                    {{/if}}
-                    <a class="nav-link" href="#features">FEATURES</a>
-                    <a class="nav-link" href="#auction">AUCTION</a>
-                    <a class="nav-link" href="#contactUs">CONTACT US</a>
+                <div class="justify-content-between  d-flex flex-column flex-lg-row">
+                    <div class="navbar-nav nav-selection" >
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="/auction">AUCTION</a>
+                        <a class="nav-link" href="/forum">FORUM</a>
+                        <a class="nav-link" href="#auction">MERCHANDISE</a>
+                        <a class="nav-link" href="#contactUs">GALLERY</a>
+                        <div class="m-l-100">
+                            {{#if logged_in}}
+                            <a class="nav-link" href="/profile">PROFILE</a>
+                            <button class="no-button" id="logout">LOGOUT</button>
+                            {{else}}
+                            <a class="nav-link" href="/login">LOGIN</a>
+                            {{/if}}
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
