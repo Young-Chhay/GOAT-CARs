@@ -3,7 +3,13 @@ body {
     background-color: #222831;
     overflow-x: hidden;
 }
-
+footer {
+    padding-top: 10px;
+    min-height: 50px;
+}
+.main-page {
+   padding-bottom: 200px; 
+}
 
 /* Navbar CSS customize */
 .navbar {
@@ -95,8 +101,31 @@ body {
     padding: 20px 10px 10px 10px;
 }
 
-
-
+/* FORUM PAGE */
+.forum-background {
+    background-color: #ECf0FE
+}
+.forum-nav {
+    background-color: #ECf0FE;
+}
+.temp-color {
+    background: lightpink;
+}
+.temp-color2 {
+    background: lightcoral;
+}
+.forum-category-name h1 {
+    padding-top:3%;
+    padding-bottom:3%;
+    font-family: 'Permanent Marker';
+    font-size: 4rem;
+}
+.forum-button-width {
+    width: 15%;
+}
+.forum-btn {
+    width: 20%;
+}
 /* Reponsive */
 
 @media (max-width: 576px) {
