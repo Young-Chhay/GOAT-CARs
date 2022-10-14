@@ -1,7 +1,7 @@
-// const Trade = require('./Trade');
+
 const Car = require('./car');
 const User = require('./User');
-const Sale = require('./sale');
+const Auction = require('./auction');
 
 // Users without a car or inventory (just a username and password)
 User.hasNone(Car, {
@@ -33,24 +33,24 @@ Car.hasOne(Sale, {
 });
 
 // Sale belongs to Car (A sale can only be for one car)
-Sale.belongsTo(Car, {
+Auction.belongsTo(Car, {
     foreignKey: 'car_id',
     onDelete: 'CASCADE'
 });
 
 // Sale belongs to User (A sale can only be for one user)
-Sale.belongsTo(User, {
+Auction.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
 // User has many Sales (A user can have many sales)
-User.hasMany(Sale, {
+User.hasMany(Auction, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
-module.exports = { User, Car, Sale };
+module.exports = { User, Car, Auction };
 
 
 
