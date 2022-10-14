@@ -1,0 +1,25 @@
+[
+    {
+      "year": 1976,
+      "make": "young@gmail.com",
+      "model": "password12345",
+      "value": 40000,
+      "trade": true
+    },
+    {
+      "name": "Drum Hollidday",
+      "email": "Drum@gmail.com",
+      "password": "drumpassword12345"
+    },
+    {
+      "name": "Richard",
+      "email": "Richard0@gmail.com",
+      "password": "richardpassword12345"
+    },
+    {
+        "name": "Nathan Underwood",
+        "email": "Nathan@gmail.com",
+        "password": "nathanpassword54321"
+    }
+  ]
+  
