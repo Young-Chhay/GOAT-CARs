@@ -50,6 +50,7 @@ User.init(
         validate: {
           len: [4],
         },
+      },
         // and id should be Number as well? 
     car_id: {
         type: DataTypes.STRING,
