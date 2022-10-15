@@ -19,12 +19,12 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
-router.get('/forum', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/');
-        return;
-    }
-    res.render('forum-main');
-})
+// router.get('/forum', (req, res) => {
+//     res.render('forum-main');
+// })
+
+// router.get('/forum/allposts', (req, res) => {
+//     res.render('forum-table');
+// })
 
 module.exports = router;
