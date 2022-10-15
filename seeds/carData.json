@@ -1,0 +1,8 @@
+[{
+    "id": 1, 
+    "year": 1965, 
+    "make": "Mercedes", 
+    "model": "model", 
+    "value": 80000, 
+    "trade": true
+}]
