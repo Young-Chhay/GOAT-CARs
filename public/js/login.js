@@ -1,3 +1,4 @@
+// handle login form
 const loginFormHandler = async (event) => {
     // Stop the browser from conituosly submitting the form so we can do so with JavaScript
     event.preventDefault();
@@ -17,7 +18,30 @@ const loginFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        alert('Failed to log in');
+        alert(response.statusText);
+      }
+    }
+  };
+
+// handle Signup form
+  const signUpFormHandler = async (event) => {
+    event.preventDefault();
+  
+    const name = document.querySelector('#signup-name').value.trim();
+    const email = document.querySelector('#signup-email').value.trim();
+    const password = document.querySelector('#signup-password').value.trim();
+  
+    if (name && email && password) {
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({ name, email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert(response.statusText);
       }
     }
   };
@@ -25,3 +49,7 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
+
+    document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);

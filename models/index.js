@@ -4,6 +4,7 @@ const User = require('./User');
 const Auction = require('./auction');
 
 // Users without a car or inventory (just a username and password)
+
 User.hasOne(Car, {
     foreignKey: 'user_id',
 });
@@ -25,8 +26,6 @@ Car.belongsTo(User, {
     foreignKey: 'buyer_id',
     onDelete: 'SET NULL'
 });
-
-
 
 // Sale belongs to User (A sale can only be for one user)
 Auction.belongsTo(User, {
