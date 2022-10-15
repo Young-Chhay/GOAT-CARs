@@ -35,4 +35,12 @@ router.get('/free-talk', (req, res) => {
     res.render('forum-free-talk', {});
 });
 
+router.get('/view-post', (req, res) => {
+    res.render('forum-view-post', {});
+});
+
+router.get('/new-post', (req, res) => {
+    res.render('forum-new-post', {});
+});
+
 module.exports = router;

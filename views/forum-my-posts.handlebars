@@ -1,7 +1,7 @@
 <div class="forum-background min-height">
             {{> forum-nav}}
             <div class="forum-category-name text-center">
-                <h1>Forum</h1>
+                <h1>My Posts</h1>
             </div>
             <main class="main-page">
                 <div class="forum-box container">
@@ -13,7 +13,9 @@
                                 <th colspan="2" scope="colgroup" class="forum-sort">Sort by: Recent Activity</th>
                                 <th colspan="3" scope="colgroup">
                                     <div class="text-right m-b-15">
-                                        <button type="button" class="btn btn-primary btn-create">Create New Post</button>
+                                        <a href="/forum/new-post">
+                                            <button type="button" class="btn btn-primary btn-create">Create New Post</button>
+                                        </a>
                                     </div>
                                 </th>
                             </tr>
