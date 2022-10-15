@@ -35,25 +35,25 @@ User.init(
         len: [8],
       },
     },
-    // I was not sure if carown has to be boolean data type? (Richard)
-    carown: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [8],
-        },
-      },
-      // I was not sure this if its goingto be string? if its year, maybe it should be Number? 
-    carmadeyear: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [4],
-        },
-      },
+    // // I was not sure if carown has to be boolean data type? (Richard)
+    // carown: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     validate: {
+    //       len: [8],
+    //     },
+    //   },
+    //   // I was not sure this if its goingto be string? if its year, maybe it should be Number? 
+    // carmadeyear: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     validate: {
+    //       len: [4],
+    //     },
+    //   },
         // and id should be Number as well? 
     car_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
                 model: 'Car',
