@@ -129,6 +129,68 @@ footer {
 .btn-create {
     width:40%;
 }
+.car-review {
+    background-image: url('../images/categories-banner/car-review.png');
+}
+.ask-price {
+    background-image: url('../images/categories-banner/ask-price.png');
+}
+.maintenance {
+    background-image: url('../images/categories-banner/maintenance.png');
+}
+.free-talk {
+    background-image: url('../images/categories-banner/free-talk.png');
+}
+.post-user {
+    margin-left: 30px;
+}
+.forum-box {
+    padding: 20px;
+    padding-left: 30px;
+}
+.post-title {
+    margin: 30px 0px 10px 0px;
+}
+.post-category {
+    margin: 10px 0px 30px 0px;
+}
+.post-category h5{
+    font-size: 1rem;
+}
+.post-description {
+    margin: 30px 0px 70px 0px;
+}
+.post-like {
+    width: 120px;
+    
+}
+.post-comment-nav {
+    margin-bottom: 30px;
+}
+.comment-box {
+    border: solid 1px black;
+    min-height: 120px;
+    position: relative;
+    margin-top: 20px;
+}
+.btn-publish {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 150px;
+    margin: 10px;
+}
+.comment-description {
+    margin: 10px;
+}
+
+.comment-username {
+    padding-top: 5%;
+    padding-left:5%;
+}
+.comment-textoutput {
+    padding:30px;
+}
 /* Reponsive */
 
 @media (max-width: 414px) {
