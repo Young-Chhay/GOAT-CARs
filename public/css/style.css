@@ -129,6 +129,18 @@ footer {
 .btn-create {
     width:40%;
 }
+.car-review {
+    background-image: url('../images/categories-banner/car-review.png');
+}
+.ask-price {
+    background-image: url('../images/categories-banner/ask-price.png');
+}
+.maintenance {
+    background-image: url('../images/categories-banner/maintenance.png');
+}
+.free-talk {
+    background-image: url('../images/categories-banner/free-talk.png');
+}
 /* Reponsive */
 
 @media (max-width: 414px) {
