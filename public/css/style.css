@@ -124,13 +124,108 @@ footer {
     width: 15%;
 }
 .forum-btn {
-    width: 20%;
+    width: 100%;
+}
+.btn-create {
+    width:40%;
 }
 /* Reponsive */
+
+@media (max-width: 414px) {
+    /* .login-card {
+      padding-left: 15px;
+      padding-right: 15px;
+    } */
+    .forum-sort {
+        font-size: 0.8rem;
+        
+    }
+    .btn-create {
+        font-size: 0.7rem;
+        margin-left: -20px;
+        margin-bottom: -20px;
+    }
+    /* .forum-box {
+        background-color: red;
+    } */
+    .forum-box td div{
+        font-size: 0.7rem;
+    }
+    .forum-box tr td{
+        font-size: 0.9rem;
+    }
+    .forum-box th {
+        font-size: 0.8rem;
+    }
+    .custom-font-size {
+        font-size: 0.5rem;
+    }
+  } 
 
 @media (max-width: 576px) {
     .login-card {
       padding-left: 15px;
       padding-right: 15px;
     }
+    .forum-sort {
+        width: 45%;
+    }
+    .btn-create {
+        width: 70%;
+        margin-left: -20px;
+    }
+    /* .forum-box {
+        background-color: red;
+    } */
+    .forum-box td{
+        font-size: 0.9rem;
+    }
+    .custom-font-size {
+        font-size: 0.6em;
+    }
+  } 
+
+  @media (max-width: 912px) {
+    /* .login-card {
+      padding-left: 15px;
+      padding-right: 15px;
+    } */
+    /* .forum-sort {
+        width: 45%;
+    } */
+    .btn-create {
+        width: 70%;
+        margin-left: -20px;
+    }
+    /* .forum-box {
+        background-color: red;
+    } */
+    /* .forum-box td{
+        font-size: 0.9rem;
+    } */
+    .forum-button-width {
+        width: 100%;
+    }
+    .custom-font-size {
+        font-size: 0.8em;
+    }
+  } 
+  @media (max-width: 1200px) {
+    /* .login-card {
+      padding-left: 15px;
+      padding-right: 15px;
+    } */
+    /* .forum-sort {
+        width: 45%;
+    } */
+    .btn-create {
+        width: 50%;
+        margin-left: -20px;
+    }
+    /* .forum-box {
+        background-color: red;
+    } */
+    /* .forum-box td{
+        font-size: 0.9rem;
+    } */
   } 
