@@ -1,25 +1,9 @@
-[
-    {
-      "year": 1976,
-      "make": "young@gmail.com",
-      "model": "password12345",
-      "value": 40000,
-      "trade": true
-    },
-    {
-      "name": "Drum Hollidday",
-      "email": "Drum@gmail.com",
-      "password": "drumpassword12345"
-    },
-    {
-      "name": "Richard",
-      "email": "Richard0@gmail.com",
-      "password": "richardpassword12345"
-    },
-    {
-        "name": "Nathan Underwood",
-        "email": "Nathan@gmail.com",
-        "password": "nathanpassword54321"
-    }
-  ]
-  
+
+[{
+    "id": 1, 
+    "year": 1965, 
+    "make": "Mercedes", 
+    "model": "model", 
+    "value": 80000, 
+    "trade": true
+}]
