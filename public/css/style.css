@@ -1,3 +1,7 @@
+/* General Utility CSS */
+.hide {
+    display: none;
+}
 /* Whole Body */
 body {
     background-color: #222831;
@@ -191,6 +195,7 @@ footer {
 .comment-textoutput {
     padding:30px;
 }
+
 /* Reponsive */
 
 @media (max-width: 414px) {
