@@ -1,31 +1,27 @@
 [
     {
-      "name": "Young",
+      "firstName": "Young",
+      "lastName": "last",
       "email": "young@gmail.com",
-      "password": "password12345",
-      "carown": "White Mustang",
-      "carmadeyear": "1964"
+      "password": "password12345"
     },
     {
-      "name": "Drum Hollidday",
+      "firstName": "Drum",
+      "lastName" : "Hollidday",
       "email": "Drum@gmail.com",
-      "password": "drumpassword12345",
-      "carown": "Purple Mustang",
-      "carmadeyear": "1965"
+      "password": "drumpassword12345"
     },
     {
-      "name": "Richard",
+      "firstName": "Richard",
+      "lastName" : "You",
       "email": "Richard0@gmail.com",
-      "password": "richardpassword12345",
-      "carown": "Black Mustang",
-      "carmadeyear": "1970"
+      "password": "richardpassword12345"
     },
     {
-        "name": "Nathan Underwood",
+        "firstName": "Nathan",
+        "lastName": "Underwood",
         "email": "Nathan@gmail.com",
-        "password": "nathanpassword54321",
-        "carown": "Yellow Mustang",
-        "carmadeyear": "1964"
+        "password": "nathanpassword54321"
     }
   ]
   
