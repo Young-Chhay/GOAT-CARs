@@ -2,7 +2,107 @@
 // const Car = require('./car');
 // const User = require('./User');
 // const Auction = require('./auction');
+// const { Model, DataTypes } = require('sequelize');
 
+// class Merchandise extends Model { }
+
+// Merchandise.init(
+//   {
+//     id: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//       primaryKey: true,
+//       autoIncrement: true,
+//     },
+//     title: {
+//       type: DataTypes.STRING,
+//       allowNull: false,
+//     },
+//     description: {
+//       type: DataTypes.STRING,
+//     },
+//     price: {
+//         type: DataTypes.INTEGER,
+//         allowNull: false
+//     },
+//     date_created: {
+//       type: DataTypes.DATE,
+//       allowNull: false,
+//       defaultValue: DataTypes.NOW,
+//     },
+//   },
+//   {
+//     sequelize,
+//     timestamps: false,
+//     freezeTableName: true,
+//     underscored: true,
+//     modelName: 'blog',
+//   }
+// );
+
+// module.exports = Merchandise;
+
+// Compare this snippet from models/car.js:
+// const { Model, DataTypes } = require('sequelize');
+// const sequelize = require('../config/connection');
+//
+// class Car extends Model { }
+//
+// Car.init(
+//     {
+//         id: {
+//             type: DataTypes.INTEGER,
+//             allowNull: false,
+//             primaryKey: true,
+//             autoIncrement: true
+//         },
+//         make: {
+//             type: DataTypes.STRING,
+//             allowNull: false
+//         },
+//         model: {
+//             type: DataTypes.STRING,
+//             allowNull: false
+//         },
+//         year: {
+//             type: DataTypes.INTEGER,
+//             allowNull: false
+//         },
+//         color: {
+//             type: DataTypes.STRING,
+//             allowNull: false
+//         },
+//         mileage: {
+//             type: DataTypes.INTEGER,
+//             allowNull: false
+//         },
+//         price: {
+//             type: DataTypes.INTEGER,
+//             allowNull: false
+//         },
+
+//         date_created: {
+//             type: DataTypes.DATE,
+//             allowNull: false,
+//             defaultValue: DataTypes.NOW
+//         }
+//     },
+//     {
+//         sequelize,
+//         freezeTableName: true,
+//         underscored: true,
+//         modelName: 'car'
+//     }
+// );
+//
+// module.exports = Car;
+
+
+
+
+
+
+// ***********************
 // // Users without a car or inventory (just a username and password)
 // User.hasNone(Car, {
 //     foreignKey: 'user_id',
