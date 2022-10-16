@@ -6,7 +6,7 @@ const auctionRoutes = require('./auction-routes');
 
 // End Points
 // router.use('/cars', carRoutes);
-// router.use('/users', userRoutes);
+router.use('/users', userRoutes);
 // router.use('/auctions', auctionRoutes);
 // router.use('/', homeRoutes);
 
