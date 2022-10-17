@@ -7,10 +7,11 @@ const logout = async () => {
   
     if (response.ok) {
       // If user successfully logged out, redirect them to the login page
-      document.location.replace('/');
+      document.location.replace('/login');
     } else {
       alert(response.statusText);
     }
   };
   
-  document.querySelector('#logout').addEventListener('click', logout);
+  // document.querySelector('#logout').addEventListener('click', logout);
+  $('#logout').on('click', logout);

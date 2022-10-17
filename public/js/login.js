@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
 
-        document.location.replace('/');
+        document.location.replace('/profile');
 
       } else {
         alert(response.statusText);
@@ -31,6 +31,7 @@ const loginFormHandler = async (event) => {
     alertMsg.addClass('hide');
     $('#alert-signup').addClass('hide');
     $('#alert-term').addClass('hide');
+    const username = document.querySelector('#signup-username').value.trim();
     const firstName = document.querySelector('#signup-firstName').value.trim();
     const lastName = document.querySelector('#signup-lastName').value.trim();
     const email = document.querySelector('#signup-email').value.trim();
@@ -40,19 +41,18 @@ const loginFormHandler = async (event) => {
   if (password !== password2) {
     
     alertMsg.removeClass('hide');
-  } else if(!firstName || !lastName || !email || !password) {
+  } else if(!firstName || !lastName || !email || !password || !username) {
     $('#alert-signup').removeClass('hide');
   } else if (!document.getElementById('signup-check').checked) {
     $('#alert-term').removeClass('hide');
-    console.log('not checked!')
+    
   } else {
     $('#signupModal').modal('hide');
-    if (firstName && lastName && email && password) {
+    if (firstName && lastName && email && password && username) {
       const response = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ firstName, lastName, email, password }),
+        body: JSON.stringify({ username, firstName, lastName, email, password }),
         headers: { 'Content-Type': 'application/json' },
-        
       });
       
       if (response.ok) {
