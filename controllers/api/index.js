@@ -10,11 +10,7 @@ const merchandiseRoutes = require('./merchandise-routes')
 router.use('/cars', carRoutes);
 router.use('/users', userRoutes);
 router.use('/forum', forumRoutes);
-<<<<<<< HEAD
 router.use('/merchandise', merchandiseRoutes)
-// router.use('/auctions', auctionRoutes);
-// router.use('/', homeRoutes);
-=======
 router.use('/auctions', auctionRoutes);
 
 
@@ -22,7 +18,6 @@ router.use((req, res) => {
     res.status(404).end();
 });
 
->>>>>>> e9dd8f51ecba3d4245da084358d52798f0b8e0c9
 
 
 module.exports = router;
