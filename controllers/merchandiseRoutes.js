@@ -1,21 +1,22 @@
 const router = require('express').Router();
-const { Merchandise } = require('../models');
+// const { Merchandise } = require('../models');
+const Merchandise = require('../models/Merchandise')
 
 router.get('/', async (req, res) => {
     try {
       // Get all projects and JOIN with user data
       const merchandiseData = await Merchandise.findAll({
-        include: [
-          {
-            model: Merchandise,
-            attributes: ['title'],
-          },
-        ],
+        // include: [
+        //   {
+        //     // model: Merchandise,
+        //     attributes: ['title'],
+        //   },
+        // ],
       });
   
       // Serialize data so the template can read it
       const merchandises = merchandiseData.map((merchandise) => merchandise.get({ plain: true }));
-  
+      
       // Pass serialized data and session flag into template
       res.render('merchandise', { 
         merchandises, 

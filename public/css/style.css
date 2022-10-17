@@ -255,6 +255,15 @@ footer {
   .profile-btn-edit {
     width: 200px;
   }
+
+  /* Merchandise */
+.merchandise-container h2 {
+    color: white;
+}
+.merchandise-container p {
+    color: white;
+}
+
 /* Reponsive */
 
 @media (max-width: 414px) {

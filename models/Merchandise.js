@@ -28,7 +28,7 @@ Merchandise.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Merchandise',
+    modelName: 'merchandise',
   }
 );
 

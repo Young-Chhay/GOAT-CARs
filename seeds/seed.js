@@ -31,10 +31,6 @@ const seedDatabase = async () => {
   });
 
 
-  const forums = await Forum.bulkCreate(forumData, {
-    individualHooks: true,
-    returning: true,
-  });
 
 
   // for (const project of projectData) {
