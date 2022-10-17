@@ -1,20 +1,21 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { User } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 
 
-// // GET all users
-// router.get('/', (req, res) => {
-//     User.findAll({
-//         attributes: { exclude: ['password'] }
-//     })
-//         .then(dbUserData => res.json(dbUserData))
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
+// GET all users
+router.get('/', (req, res) => {
+    User.findAll({
+        attributes: { exclude: ['password'] }
+    })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 // // GET a single user
 // router.get('/:id', (req, res) => {
@@ -49,7 +50,7 @@ const { User } = require('../../models');
 
 // POST a new user
 router.post('/', (req, res) => {
-// console.log('post has worked!')
+    // console.log('post has worked!')
 
     User.create({
         firstName: req.body.firstName,
@@ -57,6 +58,8 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
+
+        .then(dbUserData => res.json(dbUserData));
         .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
