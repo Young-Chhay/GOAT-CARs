@@ -8,6 +8,7 @@ const Merchandise = require('./merchandise');
 const Bid = require('./bid');
 
 
+
 // ***********************
 // Products belongsTo Category
 Bid.belongsTo(Auction, {
@@ -87,7 +88,7 @@ User.hasMany(Auction, {
     onDelete: 'CASCADE'
 });
 
-module.exports = { User, Car, Auction };
+module.exports = { User, Car, Auction, Merchandise };
 
 
 
