@@ -1,91 +1,43 @@
 const router = require('express').Router();
-const { response } = require('express');
+// const { response } = require('express');
+// const User = require('../../models/User')
 const { User } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
-
-
-// GET all users
-router.get('/', (req, res) => {
-    User.findAll({
-        attributes: { exclude: ['password'] }
-    })
-        .then(dbUserData => res.json(dbUserData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-// // GET a single user
-// router.get('/:id', (req, res) => {
-//     User.findOne({
-//         attributes: { exclude: ['password'] },
-//         where: {
-//             id: req.params.id
-//         },
-//         include: [
-//             {
-//                 model: Car,
-//                 attributes: ['id', 'make', 'model', 'year', 'color', 'price', 'seller_id', 'buyer_id']
-//             },
-//             {
-//                 model: Sale,
-//                 attributes: ['id', 'car_id', 'user_id', 'sale_date']
-//             }
-//         ]
-//     })
-//         .then(dbUserData => {
-//             if (!dbUserData) {
-//                 res.status(404).json({ message: 'No user found with this id' });
-//                 return;
-//             }
-//             res.json(dbUserData);
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
-
 // POST a new user
-router.post('/', (req, res) => {
-    // console.log('post has worked!')
+router.post('/', async (req, res) => {
+    try {
+        const userData = await User.create({
+            username: req.body.username,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+    });
 
-    User.create({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        password: req.body.password
-    })
+    req.session.save(() => {
+        req.session.logged_in = true;
 
+        res.status(200).json(userData);
+    });
+} catch (err){
+    console.log(err);
+    res.status(500).json(err);
+}
 
-        .then(dbUserData => {
-            req.session.save(() => {
-                req.session.user_id = dbUserData.id;
-                // req.session.username = dbUserData.email;
-                req.session.loggedIn = true;
+        // req.session.save(() => {
+        //     // req.session.user_id = userData.id;
+        //     // req.session.logged_in = true;
 
-                res.json(dbUserData);
-            });
-        });
+        //     res.status(200).json(userData);
+        // });
+
+    // } catch (err) {
+    //     res.status(400).json(err);
+    // }
 });
 
-// brought the template from mvc mini project
-// router.post('/', async (req, res) => {
-//     try {
-//         const userData = await User.create(req.body);
 
-//         req.session.save(() => {
-//             req.session.user_id = userData.id;
-//             req.session.logged_in = true;
-
-//             res.status(200).json(userData);
-//         });
-//     } catch (err) {
-//         res.status(400).json(err);
-//     }
-// });
 
 // POST login
 router.post('/login', async (req, res) => {
@@ -149,17 +101,17 @@ router.post('/login', async (req, res) => {
 //     });
 // });
 
-// // POST logout
-// router.post('/logout', (req, res) => {
-//     if (req.session.loggedIn) {
-//         req.session.destroy(() => {
-//             res.status(204).end();
-//         });
-//     }
-//     else {
-//         res.status(404).end();
-//     }
-// });
+// POST logout
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else {
+        res.status(404).end();
+    }
+});
 
 // // PUT update a user
 // router.put('/:id', withAuth, (req, res) => {

@@ -22,4 +22,5 @@
     }
   };    
 
-document.querySelector('.newPostForum').addEventListener('submit', newPostHandler);
+// document.querySelector('.newPostForum').addEventListener('submit', newPostHandler);
+$('.newPostForum').on('submit', newPostHandler);
