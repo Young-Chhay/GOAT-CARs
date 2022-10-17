@@ -23,7 +23,7 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create({ 
+const hbs = exphbs.create({
   helpers
 });
 
@@ -41,5 +41,5 @@ app.use("/forum", express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening Port 3001'));
 });

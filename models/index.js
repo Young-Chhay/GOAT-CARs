@@ -4,8 +4,19 @@
 const Car = require('./car');
 const User = require('./User');
 const Auction = require('./auction');
+const Merchandise = require('./merchandise');
+const Bid = require('./bid');
+
 
 // ***********************
+// Products belongsTo Category
+Bid.belongsTo(Auction, {
+    foreignKey: 'auction_id',
+});
+// Categories have many Products
+Auction.hasMany(Bid, {
+    foreignKey: 'auction_id',
+});
 // // Users without a car or inventory (just a username and password)
 
 // User.hasOne(Car, {
