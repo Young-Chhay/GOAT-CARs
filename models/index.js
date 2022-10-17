@@ -4,6 +4,7 @@
 const Car = require('./car');
 const User = require('./User');
 const Auction = require('./auction');
+const Merchandise = require('./Merchandise');
 
 // // Users without a car or inventory (just a username and password)
 
@@ -75,7 +76,7 @@ User.hasMany(Auction, {
     onDelete: 'CASCADE'
 });
 
-module.exports = { User, Car, Auction };
+module.exports = { User, Car, Auction, Merchandise };
 
 
 
