@@ -21,19 +21,14 @@ Merchandise.init(
     price: {
         type: DataTypes.INTEGER, 
         allowNull: false
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'blog',
+    modelName: 'Merchandise',
   }
 );
 
