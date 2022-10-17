@@ -2,7 +2,7 @@
             {{> forum-nav}}
             <main class="main-page">
                 <div class="forum-box container bg-white">
-                    <form>
+                    <form class="newPostForum">
                         <div class="mb-3">
                             <label for="forumTitle" class="form-label">Title</label>
                             <input type="text" class="form-control" id="forum-post-title">
@@ -13,25 +13,25 @@
                         </div>
                         <h6 class="m-b-10"> Select the categories!</h6>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" checked>
+                            <input class="form-check-input" name="categories" id="check-carReview" type="checkbox" value="" checked>
                             <label class="form-check-label">
                                 Car Review
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" name="categories" id="check-askPrice" type="checkbox" value="">
                             <label class="form-check-label">
                                 Ask Price
                             </label>
                         </div>              
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" name="categories" id="check-maintenance" type="checkbox" value="">
                             <label class="form-check-label">
                                 Maintenance
                             </label>
                         </div>              
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" name="categories" id="check-freeTalk" type="checkbox" value="">
                             <label class="form-check-label">
                                 Free Talk
                             </label>
@@ -42,3 +42,5 @@
                 </div>
             </main>
         </div>
+
+        <script src="./js/newPost.js"></script>
