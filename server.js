@@ -33,13 +33,7 @@ const sess = {
 
 app.use(session(sess));
 
-<<<<<<< HEAD
 
-=======
-const hbs = exphbs.create({
-  helpers
-});
->>>>>>> e9dd8f51ecba3d4245da084358d52798f0b8e0c9
 
 // hbs.getPartials().then(function (partials) {
 //   console.log(partials);
@@ -57,10 +51,6 @@ app.use("/merchandise", express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-<<<<<<< HEAD
-  app.listen(PORT, () => console.log('Now listening'));
-=======
 
   app.listen(PORT, () => console.log('Now listening at localhost:3001'));
->>>>>>> e9dd8f51ecba3d4245da084358d52798f0b8e0c9
 });
