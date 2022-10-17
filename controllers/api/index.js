@@ -6,15 +6,16 @@ const auctionRoutes = require('./auction-routes');
 
 
 // End Points
-// router.use('/cars', carRoutes);
+router.use('/cars', carRoutes);
 router.use('/users', userRoutes);
 router.use('/forum', forumRoutes);
-// router.use('/auctions', auctionRoutes);
-// router.use('/', homeRoutes);
+router.use('/auctions', auctionRoutes);
 
-// router.use((req, res) => {
-//     res.status(404).end();
-// }
-// );
+
+router.use((req, res) => {
+    res.status(404).end();
+});
+
+
 
 module.exports = router;

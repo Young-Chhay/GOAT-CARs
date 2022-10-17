@@ -23,7 +23,7 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create({ 
+const hbs = exphbs.create({
   helpers
 });
 
@@ -42,5 +42,6 @@ app.use("/merchandise", express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
+
   app.listen(PORT, () => console.log('Now listening at localhost:3001'));
 });

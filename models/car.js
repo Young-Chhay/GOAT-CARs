@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+// connection.js to connect Node to MySQL
+const sequelize = require('../config/connection.js');
 
-class Car extends Model {}
+class Car extends Model { }
 
 Car.init(
   {
@@ -12,8 +13,8 @@ Car.init(
       autoIncrement: true,
     },
     year: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     make: {
       type: DataTypes.STRING,
@@ -24,13 +25,14 @@ Car.init(
       allowNull: false,
     },
     value: {
-        type: DataTypes.INTEGER, 
-        allowNull: false,
-    }, 
-    trade: {
-        type: DataTypes.BOOLEAN, 
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
+    // NOt using trade
+    // trade: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    // },
   },
   {
     sequelize,

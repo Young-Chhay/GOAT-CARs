@@ -1,9 +1,10 @@
+// create a sequelize model for our table for bidding
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-class Auction extends Model { }
+class Bid extends Model { }
 
-Auction.init(
+Bid.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,11 +12,11 @@ Auction.init(
             primaryKey: true,
             autoIncrement: true
         },
-        car_id: {
+        auction_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'car',
+                model: 'auction',
                 key: 'id'
             }
         },
@@ -27,29 +28,24 @@ Auction.init(
                 key: 'id'
             }
         },
-        sale_date: {
-            type: DataTypes.DATE,
-            allowNull: true,
-            defaultValue: DataTypes.NOW
-        },
-        // active boolean for auction data default true 
-        active: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: true
-        },
-        starting_bid: {
+        // *** use this as the highest bid 
+        bid_amount: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        bid_date: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+        }
     },
-
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'auction'
+        modelName: 'bid'
     }
 );
 
-module.exports = Auction;
+module.exports = Bid;
+
