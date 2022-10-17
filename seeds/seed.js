@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 const { User, car, auction, Merchandise } = require('../models');
 const Forum = require('../models/Forum');
 
-
 const userData = require('./userData.json');
 const carData = require('./carData.json');
 const forumData = require('./forumData.json')
@@ -21,6 +20,10 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  const forums = await Forum.bulkCreate(forumData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   const merchandise = await Merchandise.bulkCreate(merchData, {
     individualHooks: true,
