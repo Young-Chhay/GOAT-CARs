@@ -24,10 +24,14 @@ Car.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // value: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        // },
+        value: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         // NOt using trade
         // trade: {
         //   type: DataTypes.BOOLEAN,
