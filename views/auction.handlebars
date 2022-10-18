@@ -1,8 +1,10 @@
 <div class="forum-background min-height">
+    
     <div class="forum-category-name text-center auction">
         <h1>Auction</h1>
     </div>
     <main class="main-page">
+        {{> newAuction}}
         <div class="forum-box container">
             <table class="table table-light">
                 <colgroup span="2"></colgroup>
@@ -13,9 +15,10 @@
                         <th scope="col" class="forum-sort">Sort by: Recent Activity</th>
                         <th colspan="4" scope="colgroup">
                             <div class="text-right m-b-15">
-                                <a href="/auction">
-                                    <button type="button" class="btn btn-primary btn-create">Bid</button>
+                                <a href="#" class="txt2 p-t-15 p-r-30" data-bs-toggle="modal" data-bs-target="#newauctionModal">
+                                    Post new Auction
                                 </a>
+                                
                             </div>
                         </th>
                     </tr>

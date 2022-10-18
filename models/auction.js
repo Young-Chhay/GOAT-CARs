@@ -27,10 +27,18 @@ Auction.init(
                 key: 'id'
             }
         },
-        sale_date: {
+        date_created: {
             type: DataTypes.DATE,
             allowNull: true,
             defaultValue: DataTypes.NOW
+        },
+        date_start: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        date_end: {
+            type: DataTypes.DATE,
+            allowNull: false,
         },
         // active boolean for auction data default true 
         active: {
