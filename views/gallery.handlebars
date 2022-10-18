@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="gallery-container">
+<div class="gallery-container" style="color: white;">
   <div class="card-header col-md-12 text-center">
     <h2>
       CLASSICS GALLERY
@@ -27,6 +27,7 @@
   </div>
   <div id="gallery-card-container">
   {{#each cars as |car| }}
+
     <div class="card" style="width: 18rem;">
       <img src="{{car.image}}" class="card-img-top" alt="...">
       <div class="card-body">
@@ -39,6 +40,7 @@
       </div>
     </div>
     {{/each}}
+
   </div>
 </div>
 

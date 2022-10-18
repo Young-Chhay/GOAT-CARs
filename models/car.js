@@ -32,6 +32,13 @@ Car.init(
             type: DataTypes.STRING,
             allowNull: true
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
         // NOt using trade
         // trade: {
         //   type: DataTypes.BOOLEAN,
@@ -40,6 +47,7 @@ Car.init(
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'car',

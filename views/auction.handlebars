@@ -1,53 +1,34 @@
 <div class="forum-background min-height">
+    
     <div class="forum-category-name text-center auction">
         <h1>Auction</h1>
     </div>
     <main class="main-page">
         <div class="forum-box container">
-            <table class="table table-light">
-                <colgroup span="2"></colgroup>
-                <colgroup span="4"></colgroup>
-                <thead>
-                    <tr>
-                        <th scope="col">Highest Bid</th>
-                        <th scope="col" class="forum-sort">Sort by: Recent Activity</th>
-                        <th colspan="4" scope="colgroup">
-                            <div class="text-right m-b-15">
-                                <a href="/auction">
-                                    <button type="button" class="btn btn-primary btn-create">Bid</button>
-                                </a>
-                            </div>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each auctions as |auction|}}
-                    <tr>
-                        <td colspan="2" scope="col">
-                            <div>
-                                {{!-- {{car_id}} --}}
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    test1
-                                </div>
-                                <div class="col">
-                                    test 2
-                                </div>
-                            </div>
-                        </td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>Date</td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
+            <div class="text-right m-b-30">
+                <a href="/auction/new-auction">
+                    <button type="button" class="btn btn-primary auction-button-width">POST YOUR AUCTION</button>
+                </a>
+            </div>
+            <div class="forum-category-list row row-cols-1 row-cols-md-2 g-4">
+                {{#each auctions as |auction|}}
+                <div class="col">
+                    <div class="card" href="#">
+                        <img src="{{auction.car.image}}" class="card-img-top" alt="cars shown">
+                        <div class="card-body">
+                            <h3 class="card-title">{{auction.title}}</h3>
+                            <h4 class="card-text">{{auction.user.username}}</h4>
+                            <p class="card-text">{{auction.description}}</p>
+                            <p class="card-text">Time Left: </p>
+                            <a href="/auction/bid" class="btn btn-primary stretched-link m-t-15 m-b-10 forum-btn">GO BID!</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                
+                
+            </div>
+            
         </div>
     </main>
 </div>

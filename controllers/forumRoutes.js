@@ -178,6 +178,7 @@ router.get('/view-post', (req, res) => {
 
 router.get('/new-post', (req, res) => {
     res.render('forum-new-post', {
+
         logged_in: req.session.logged_in
     });
 });

@@ -19,7 +19,7 @@ const hbs = exphbs.create({
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 300000,
+    maxAge: 3000000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
@@ -47,10 +47,10 @@ app.use("/", express.static(path.join(__dirname, 'public')));
 app.use("/forum", express.static(path.join(__dirname, 'public')));
 app.use("/merchandise", express.static(path.join(__dirname, 'public')));
 app.use("/gallery", express.static(path.join(__dirname, 'public')));
+app.use("/auction", express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-
   app.listen(PORT, () => console.log('Now listening at localhost:3001'));
 });
