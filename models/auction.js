@@ -37,6 +37,10 @@ Auction.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        current_bid: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
                 
         car_id: {
             type: DataTypes.INTEGER,

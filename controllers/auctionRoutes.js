@@ -23,12 +23,6 @@ router.get('/', async (req, res) => {
                         'image'
                     ]
                 },
-                {
-                    model: Bid,
-                    attributes: [
-                        'bid_amount'
-                    ]
-                }
             ]
         })
         const auctions = auctionData.map((auction) => auction.get({ plain: true }))

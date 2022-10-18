@@ -9,16 +9,16 @@ const bidHandler = async (event) => {
     if (!bid) {
         $('#alert-bid').removeClass('hide');
     } else {
-        const response = await fetch('/api/bid', {
-            method: 'POST',
-            body: JSON.stringify({ bid, auction }),
+        const response = await fetch(`/api/auction/${auction}`, {
+            method: 'PUT',
+            body: JSON.stringify({ bid }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/auction')
+            document.location.replace(`/auction/bid/${auction}`)
         } else {
-            alert('Failed to add new car')
+            alert('Failed to add bid')
         }
     }
   };    
