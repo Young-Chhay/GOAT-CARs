@@ -33,11 +33,6 @@ Bid.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        bid_date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW
-        }
     },
     {
         sequelize,

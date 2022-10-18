@@ -1,4 +1,4 @@
-const User = require('./User')
+const User = require('./User');
 const Forum = require('./Forum');
 const Car = require('./Car');
 const Auction = require('./Auction');
@@ -33,6 +33,26 @@ User.hasMany(Auction, {
 Auction.belongsTo(User, {
     foreignKey: 'user_id',
 });
+
+User.hasMany(Bid, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Bid.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+
+Auction.hasMany(Bid, {
+    foreignKey: 'auction_id',
+    onDelete: 'CASCADE'
+});
+
+Bid.belongsTo(Auction, {
+    foreignKey: 'auction_id'
+});
+
 
 // // Sale belongs to User (A sale can only be for one user)
 

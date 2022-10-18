@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Car, Auction } = require('../models');
+const { User, Car, Auction, Bid } = require('../models');
 // const Bid = require('../models/Bid');
 const withAuth = require('../utils/auth');
 
@@ -21,6 +21,12 @@ router.get('/', async (req, res) => {
                         'make',
                         'model',
                         'image'
+                    ]
+                },
+                {
+                    model: Bid,
+                    attributes: [
+                        'bid_amount'
                     ]
                 }
             ]
@@ -52,9 +58,30 @@ router.get('/new-auction', async (req,res) => {
     }
 })
 
-router.get('/bid', async (req,res) => {
+router.get('/bid/:id', async (req,res) => {
     try {
+        const auctionData = await Auction.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+                {
+                    model: Car,
+                    attributes: [
+                        'year',
+                        'make',
+                        'model',
+                        'value',
+                        'image',
+                    ],
+                },
+            ],
+        });
+        const auction = auctionData.get({plain: true});
+
         res.render('auction-bid', {
+            auction,
             logged_in: req.session.logged_in
         }) 
     } catch (err) {
