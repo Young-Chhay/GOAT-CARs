@@ -61,7 +61,7 @@ User.init(
     //   },
     //     // and id should be Number as well? 
     // car_id: {
-    //     type: DataTypes.STRING,
+    //     type: DataTypes.INTEGER,
     //     allowNull: false,
     //     references: {
     //             model: 'Car',
