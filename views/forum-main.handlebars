@@ -63,23 +63,24 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-2">
-                                                img
-                                            </div>
-                                            <div class="col-10">
+                                            
+                                            <div class="col">
                                                 <h6>{{forum.username}}</h6>
                                                 <h6>{{format_date forum.date_created}}</h6>
                                             </div>
                                         </div>
-                                        <h5 class="m-t-10">Post Title</h5>
-                                        <h6 class="m-t-7">Category</h6>
+                                        <h5 class="m-t-10">{{forum.title}}</h5>
+                                        <h6 class="m-t-7">{{forum.category}}</h6>
                                         <hr>
                                         <div class="row">
                                             <div class="col">
-                                                Comments
+                                                <i class="bi bi-chat-dots"></i> 10
                                             </div>
                                             <div class="col">
-                                                Likes
+                                                <i class="bi bi-heart-fill"></i> 10
+                                            </div>
+                                            <div class="col">
+                                                <i class="bi bi-eye"></i> 10
                                             </div>
                                         </div>
                                     </div>
@@ -87,58 +88,7 @@
                             </div>
                             {{/each}}
 
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                Profil
-                                            </div>
-                                            <div class="col-10">
-                                                <h6>User</h6>
-                                                <h6>Date</h6>
-                                            </div>
-                                        </div>
-                                        <h5 class="m-t-10">Post Title</h5>
-                                        <h6 class="m-t-7">Category</h6>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col">
-                                                Comments
-                                            </div>
-                                            <div class="col">
-                                                Likes
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                Profil
-                                            </div>
-                                            <div class="col-10">
-                                                <h6>User</h6>
-                                                <h6>Date</h6>
-                                            </div>
-                                        </div>
-                                        <h5 class="m-t-10">Post Title</h5>
-                                        <h6 class="m-t-7">Category</h6>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col">
-                                                Comments
-                                            </div>
-                                            <div class="col">
-                                                Likes
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

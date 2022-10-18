@@ -6,21 +6,21 @@ const { QueryTypes } = require('sequelize');
 
 router.get('/', async (req,res) => {
     try {
-        const query =  "SELECT * FROM forum ORDER BY data_created DESC LIMIT 3";
-        const [results, metadata] = await sequelize.query(query)
-        // const forumData = await sequelize.query(query,
-        //     {
-        //         bind: ['active'],
-        //         type: QueryTypes.SELECT
-        //     }
-        //     ); 
-        const forumData = results;
-            const forums = forumData.map((forum) => forum.get({ plain: true }))
+        const forumData = await Forum.findAll({
+            limit: 3,
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+        });
+
+        const forums = forumData.map((forum) => forum.get({ plain: true}))
         res.render('forum-main', {
             forums,
             logged_in: req.session.logged_in
-        }, 
-    );
+        })
     } catch (err) {
         res.status(500).json(err);
     }
