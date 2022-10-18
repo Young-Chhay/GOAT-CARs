@@ -74,6 +74,7 @@ router.post('/', async (req, res) => {
             year: req.body.year,
             make: req.body.make,
             model: req.body.model,
+            value: req.body.value,
             image: req.body.image,
             user_id: req.session.user_id,
         });

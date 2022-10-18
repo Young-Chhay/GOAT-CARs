@@ -7,15 +7,17 @@ const addCarHandler = async (event) => {
     const year = document.querySelector('#car-year').value;
     const make = document.querySelector('#car-make').value.trim();
     const model = document.querySelector('#car-model').value.trim();
+    const value = document.querySelector('#car-value').value.trim();
     const image = document.querySelector('#car-image').value.trim();
+
     // console.log(year);
     // console.log(make);
     // console.log(model);
     // console.log(image);
-    if (year && make && model && image) {
+    if (year && make && model && value && image) {
         const response = await fetch('/api/car', {
             method: 'POST',
-            body: JSON.stringify({ year, make, model, image }),
+            body: JSON.stringify({ year, make, model, value, image }),
             headers: { 'Content-Type': 'application/json' },
         });
 
