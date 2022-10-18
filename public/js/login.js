@@ -36,9 +36,9 @@ const loginFormHandler = async (event) => {
     const lastName = document.querySelector('#signup-lastName').value.trim();
     const email = document.querySelector('#signup-email').value.trim();
     const password = document.querySelector('#signup-password').value.trim();
-    const password2 = document.querySelector('#signup-password2').value.trim();
+    const confirmPassword = document.querySelector('#confirm-Password').value.trim();
     
-  if (password !== password2) {
+  if (password !== confirmPassword) {
     
     alertMsg.removeClass('hide');
   } else if(!firstName || !lastName || !email || !password || !username) {
