@@ -12,12 +12,17 @@ router.get('/', async (req,res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/profile');
-        return;
+router.get('/login', async (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            res.redirect('/profile');
+            return;
+        }
+        res.render('login');
+    } catch (err) {
+        res.status(500).json(err);
     }
-    res.render('login');
+    
 })
 
 router.get('/profile', withAuth, async (req, res) => {
