@@ -1,0 +1,53 @@
+<div class="forum-background min-height">
+    <div class="forum-category-name text-center auction">
+        <h1>Auction</h1>
+    </div>
+    <main class="main-page">
+        <div class="forum-box container">
+            <table class="table table-light">
+                <colgroup span="2"></colgroup>
+                <colgroup span="4"></colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">Highest Bid</th>
+                        <th scope="col" class="forum-sort">Sort by: Recent Activity</th>
+                        <th colspan="4" scope="colgroup">
+                            <div class="text-right m-b-15">
+                                <a href="/auction">
+                                    <button type="button" class="btn btn-primary btn-create">Bid</button>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each auctions as |auction|}}
+                    <tr>
+                        <td colspan="2" scope="col">
+                            <div>
+                                {{!-- {{car_id}} --}}
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    test1
+                                </div>
+                                <div class="col">
+                                    test 2
+                                </div>
+                            </div>
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>Date</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
