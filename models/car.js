@@ -24,6 +24,10 @@ Car.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        value: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         image: {
             type: DataTypes.STRING,
             allowNull: true
@@ -35,6 +39,11 @@ Car.init(
                 key: 'id',
             },
         },
+        // NOt using trade
+        // trade: {
+        //   type: DataTypes.BOOLEAN,
+        //   allowNull: false,
+        // },
     },
     {
         sequelize,
