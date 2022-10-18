@@ -10,9 +10,8 @@
                         <colgroup span="4"></colgroup>
                         <thead>
                             <tr>
-                                <th scope="col">Ask Price</th>
-                                <th scope="col" class="forum-sort">Sort by: Recent Activity</th>
-                                <th colspan="4" scope="colgroup">
+                                <th colspan="2" scope="colgroup" class="forum-sort">Sort by: Recent Activity</th>
+                                <th colspan="3" scope="colgroup">
                                     <div class="text-right m-b-15">
                                         <a href="/forum/new-post">
                                         <button type="button" class="btn btn-primary btn-create">Create New Post</button>
@@ -22,33 +21,35 @@
                             </tr>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col"></th>
-                                <th scope="col">msg.</th>
-                                <th scope="col">likes</th>
-                                <th scope="col">views</th>
-                                <th scope="col">Recent Activity</th>
+                                <th scope="col"><i class="bi bi-chat-dots"></i></th>
+                                <th scope="col"><i class="bi bi-heart-fill"></i></th>
+                                <th scope="col"><i class="bi bi-eye"></i></th>
+                                <th scope="col">Date Posted</th>
                             </tr>
                         </thead>
                         <tbody>
+                            {{#each forums as |forum| }}
                             <tr>
-                                <td colspan="2" scope="col">
+                                <td>
                                     <div>
-                                        Testing
+                                        {{forum.title}}
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                        test1    
+                                        {{forum.user.username}}
                                         </div>
                                         <div class="col">
-                                        test  2 
+                                        {{forum.category}}
                                         </div>
                                     </div>
+                                    
                                 </td>
                                 <td>0</td>
                                 <td>0</td>
                                 <td>0</td>
-                                <td>Date</td>
+                                <td>{{format_date forum.date_created}}</td>
                             </tr>
+                            {{/each}}
                             
                         </tbody>
                     </table>

@@ -1,8 +1,34 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Auction } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req,res) => {
+
+router.get('/auction', async (req, res) => {
+    try {
+        const auctionData = await Auction.findOne({
+            where: {
+                active: true
+            },
+        });
+
+        const auctions = auctionData.get({ plain: true });
+
+        res.render('auction', {
+            auctions
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+    // try {
+    //     res.render('auction', {
+    //         logged_in: req.session.logged_in
+    //     });
+    // } catch (err) {
+    //     res.status(500).json(err);
+    // }
+});
+
+router.get('/', async (req, res) => {
     try {
         res.render('homepage', {
             logged_in: req.session.logged_in
@@ -12,12 +38,17 @@ router.get('/', async (req,res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/profile');
-        return;
+router.get('/login', async (req, res) => {
+    try {
+        if (req.session.logged_in) {
+            res.redirect('/profile');
+            return;
+        }
+        res.render('login');
+    } catch (err) {
+        res.status(500).json(err);
     }
-    res.render('login');
+    
 })
 
 router.get('/profile', withAuth, async (req, res) => {

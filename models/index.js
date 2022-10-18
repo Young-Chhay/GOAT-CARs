@@ -1,96 +1,69 @@
-
+const User = require('./User')
+const Forum = require('./Forum');
 
 // // Users without a car or inventory (just a username and password)
-// const Car = require('./car');
-const User = require('./User');
-// const Auction = require('./auction');
-// const Merchandise = require('./merchandise');
-// const Bid = require('./bid');
+const Car = require('./car');
+const Auction = require('./auction');
+const Bid = require('./bid');
 
+User.hasMany(Forum, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
 
+Forum.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
-// // ***********************
-// // Products belongsTo Category
-// Bid.belongsTo(Auction, {
-//     foreignKey: 'auction_id',
-// });
-// // Categories have many Products
-// Auction.hasMany(Bid, {
-//     foreignKey: 'auction_id',
-// });
-// // // Users without a car or inventory (just a username and password)
+// All the cars a user has (Inventory of all cars a user has)
+User.hasMany(Car, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
 
-// // User.hasOne(Car, {
-// //     foreignKey: 'user_id',
-// // });
+// Car belongs to User, as a seller (Inventory of cars for sale)
+Car.belongsTo(User, {
+    foreignKey: 'user_id',
+});
 
-// // // All the cars a user has (Inventory of all cars a user has)
-// // User.hasMany(Car, {
-// //     foreignKey: 'user_id',
-// //     onDelete: 'CASCADE'
-// // });
+User.hasMany(Auction, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+})
 
-// // // Car belongs to User, as a seller (Inventory of cars for sale)
-// // Car.belongsTo(User, {
-// //     foreignKey: 'seller_id',
-// //     onDelete: 'SET NULL'
-// // });
+// Sale belongs to User (A sale can only be for one user)
+Auction.belongsTo(User, {
+    foreignKey: 'user_id',
+});
 
-// // // Car belongs to User, as a buyer (Once a car is sold, the buyer is stored here)
-// // Car.belongsTo(User, {
-// //     foreignKey: 'buyer_id',
-// //     onDelete: 'SET NULL'
-// // });
+User.hasMany(Bid, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+})
 
-// // // Sale belongs to User (A sale can only be for one user)
-// // Auction.belongsTo(User, {
-// //     foreignKey: 'user_id',
-// //     onDelete: 'CASCADE'
-// // });
+Bid.belongsTo(User, {
+    foreignKey: 'user_id',
+});
 
-// // // User has many Sales (A user can have many sales)
-// // User.hasMany(Auction, {
-// //     foreignKey: 'user_id',
-// //     onDelete: 'CASCADE'
-// // });
+Auction.hasMany(Bid, {
+    foreignKey: 'auction_id',
+    onDelete: 'CASCADE'
+});
 
-// User.hasOne(Car, {
-//     foreignKey: 'user_id',
-// });
+Bid.belongsTo(Auction, {
+    foreignKey: 'auction_id',
+});
 
-// // All the cars a user has (Inventory of all cars a user has)
-// User.hasMany(Car, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// });
+Car.hasOne(Auction, {
+    foreignKey: 'car_id',
+    onDelete: 'CASCADE'
+})
 
-// // Car belongs to User, as a seller (Inventory of cars for sale)
-// Car.belongsTo(User, {
-//     foreignKey: 'seller_id',
-//     onDelete: 'SET NULL'
-// });
+Auction.belongsTo(Car, {
+    foreignKey: 'car_id',
+});
 
-// // Car belongs to User, as a buyer (Once a car is sold, the buyer is stored here)
-// Car.belongsTo(User, {
-//     foreignKey: 'buyer_id',
-//     onDelete: 'SET NULL'
-// });
-
-// // Sale belongs to User (A sale can only be for one user)
-// Auction.belongsTo(User, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// });
-
-// // User has many Sales (A user can have many sales)
-// User.hasMany(Auction, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// });
-
-// module.exports = { User, Car, Auction, Merchandise };
-module.exports = { User};
-
+module.exports = { User, Car, Auction, Bid };
 
 
 
