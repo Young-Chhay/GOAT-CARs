@@ -12,9 +12,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/forum/all-posts">All Posts</a>
                                 </li>
+                                {{#if logged_in}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="/forum/my-posts">My Posts</a>
                                 </li>
+                                {{/if}}
                             </ul>
                             <form class="d-flex" role="search">
                                 <input class="form-control forum-nav-input me-2" type="search" placeholder="Search" aria-label="Search">

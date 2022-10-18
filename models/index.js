@@ -1,11 +1,19 @@
-
+const User = require('./User')
+const Forum = require('./Forum');
 
 // // Users without a car or inventory (just a username and password)
 const Car = require('./car');
-const User = require('./User');
 const Auction = require('./auction');
 const Bid = require('./bid');
 
+User.hasMany(Forum, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Forum.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
 // All the cars a user has (Inventory of all cars a user has)
 User.hasMany(Car, {
@@ -56,7 +64,6 @@ Auction.belongsTo(Car, {
 });
 
 module.exports = { User, Car, Auction, Bid };
-
 
 
 

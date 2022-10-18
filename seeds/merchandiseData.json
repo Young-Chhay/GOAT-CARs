@@ -1,7 +1,23 @@
-[{
+[
+    {
     "id": 1, 
-    "title": "Vintage 1960's Mercedes Emblem", 
+    "title": "1960's Mercedes Emblem", 
     "description": "Vintage car emblem taken off a famous Mercedes from James Bond movie", 
-    "price": 1000000000
+    "price": 1000000000, 
+    "image": "https://thumbs.dreamstime.com/b/emblem-car-retro-old-mercedes-benz-close-up-kharkiv-ukraine-may-117795926.jpg"
+},
 
-}]
+{ "id": 2, 
+"title": "1960s Car T-Shirt", 
+"description": "Show em your stuff witht this sweet T that let's the people know what's up", 
+"price": 25, 
+"image": "https://cdn.shopify.com/s/files/1/1306/0683/products/Im_Not_Old_Im_A_Classic_Funny_Classic_Car_T-Shirt_shirt_tshirt_666x695.jpg?v=1631990439"
+}, 
+
+{ "id": 3, 
+"title": "1960s Car Hat", 
+"description": "Block out the sun and the 70s Car Club hate with this sweet snapback", 
+"price": 30, 
+"image": "https://i.etsystatic.com/32127616/r/il/bc3cb3/3897216259/il_794xN.3897216259_m6wu.jpg"
+}
+]

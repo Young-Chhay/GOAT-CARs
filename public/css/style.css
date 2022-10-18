@@ -134,7 +134,7 @@ footer {
     width: 100%;
 }
 .btn-create {
-    width:40%;
+    width:55%;
 }
 .car-review {
     background-image: url('../images/categories-banner/car-review.png');
@@ -257,12 +257,28 @@ footer {
   }
 
   /* Merchandise */
+#merch-card-container {
+    display: flex;
+}
+
 .merchandise-container h2 {
-    color: white;
+    color: black;
 }
+
 .merchandise-container p {
-    color: white;
+    color: black;
+
 }
+
+.card-text {
+    color: black;
+}
+
+.card img {
+    height: 250px;
+    width: 300px;
+}
+
 
 /* Reponsive */
 
