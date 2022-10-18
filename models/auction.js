@@ -11,14 +11,37 @@ Auction.init(
             primaryKey: true,
             autoIncrement: true
         },
-        // car_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'car',
-        //         key: 'id'
-        //     }
-        // },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        date_end: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        time_end: {
+            type: DataTypes.STRING,
+        },
+        // active boolean for auction data default true 
+
+        starting_bid: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+                
+        car_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'car',
+                key: 'id'
+            }
+        },
+
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -26,29 +49,6 @@ Auction.init(
                 model: 'user',
                 key: 'id'
             }
-        },
-        date_created: {
-            type: DataTypes.DATE,
-            allowNull: true,
-            defaultValue: DataTypes.NOW
-        },
-        // date_start: {
-        //     type: DataTypes.DATE,
-        //     allowNull: false,
-        // },
-        // date_end: {
-        //     type: DataTypes.DATE,
-        //     allowNull: false,
-        // },
-        // active boolean for auction data default true 
-        active: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: true
-        },
-        starting_bid: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
         },
     },
 

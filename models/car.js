@@ -28,18 +28,17 @@ Car.init(
             type: DataTypes.STRING,
             allowNull: true
         },
-        // value: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        // },
-        // NOt using trade
-        // trade: {
-        //   type: DataTypes.BOOLEAN,
-        //   allowNull: false,
-        // },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'car',

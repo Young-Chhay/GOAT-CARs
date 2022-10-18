@@ -19,13 +19,7 @@ router.get('/auction', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-    // try {
-    //     res.render('auction', {
-    //         logged_in: req.session.logged_in
-    //     });
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
+
 });
 
 router.get('/', async (req, res) => {
@@ -41,7 +35,7 @@ router.get('/', async (req, res) => {
 router.get('/login', async (req, res) => {
     try {
         if (req.session.logged_in) {
-            res.redirect('/profile');
+            await res.redirect('/');
             return;
         }
         res.render('login');
@@ -51,18 +45,23 @@ router.get('/login', async (req, res) => {
     
 })
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile', async (req, res) => {
     try {
+        if (!req.session.logged_in) {
+            res.redirect('/login');
+            return;
+        }
+
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            // include: [{ }],
+            
         });
 
         const user = userData.get({ plain: true });
 
         res.render('profile', {
             ...user,
-            logged_in: true
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);

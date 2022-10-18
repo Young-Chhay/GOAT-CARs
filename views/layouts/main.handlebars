@@ -16,7 +16,15 @@
 	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link href="./css/style.css" rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
     <title>G.O.A.T CAR</title>
 </head>
 
@@ -41,7 +49,7 @@
                         <a class="nav-link" href="/gallery">GALLERY</a>
                         {{#if logged_in}}
                         <a class="nav-link" href="/profile">PROFILE</a>
-                        <a class="nav-link" id="logout">LOGOUT</a>
+                        <a class="nav-link" id="logout" href="#">LOGOUT</a>
                         
                         {{else}}
                         <a class="nav-link" href="/login">LOGIN</a>
@@ -68,9 +76,11 @@
         crossorigin="anonymous"></script>
     <script src="js/modal.js"></script>
     <script src="js/fbDummy.js"></script>
-    <script src="./js/login.js"></script>
-    <script src="./js/logout.js"></script>
-    <script src="./js/newPost.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/newPost.js"></script>
+    <script src="js/addCar.js"></script>
+    <script src="js/auctionPost.js"></script>
 </body>
 
 </html>

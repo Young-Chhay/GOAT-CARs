@@ -1,38 +1,35 @@
-const auctionPostFormHandler = async (event) => {
+
+const auctionPostHandler = async (event) => {
     event.preventDefault();
-    
-    const carName = $('#new-auction-car').value().trim();
-    const startDate = $('#new-auction-start-date').value().trim();
-    const endDate = $('#new-auction-end-date').value().trim();
-    const startingBid = $('#new-auction-starting-bid').value().trim();
-    
+
+    const title = document.querySelector('#auction-post-title').value.trim();
+    const car = $('#auction-car-id').find(':selected').val();
+    const endDate = $("#datepicker").val();
+    const endHour = $('#auction-endHour').val();
+    const startBid = $('#starting-bid').val();
+    const descr = $('#auction-post-descr').val();
     
 
-    
-    if (carName && startDate && endDate && startingBid) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ username, firstName, lastName, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-      
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert(response.statusText);
-      }
-      
+    console.log(title);
+    console.log(car);
+    console.log(endDate);
+    console.log(endHour);
+    console.log(startBid);
+    console.log(descr);
+    if (title && car && endDate && endHour && startBid && descr) {
+        const response = await fetch('/api/auction', {
+            method: 'POST',
+            body: JSON.stringify({ title, descr, endDate, endHour, startBid, car}),
+            headers: { 'Content-Type' : 'application/json' },
+        });
+
+        if (response.ok) {
+            document.location.replace('/auction')
+        } else {
+            alert('failed to post new auction')
+        }
+    } else {
+        alert('please enter all the information to post auction')
     }
-  };
-  
-  // document
-  //   .querySelector('.login-form')
-  //   .addEventListener('submit', loginFormHandler);
-
-// $('.signup-form').addEventListener('submit', signUpFormHandler);
-$('.signup-form').on('submit', signUpFormHandler);
-$('.login100-form').on('submit', loginFormHandler);
-
-function emptyForum() {
-    $('input:text').val("");
 }
+$('.newAuctionForum').on('submit', auctionPostHandler);

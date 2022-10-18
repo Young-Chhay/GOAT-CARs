@@ -274,9 +274,25 @@ footer {
     color: black;
 }
 
-.card img {
+.card-merch img {
     height: 250px;
     width: 300px;
+}
+
+/* Auction Page */
+.auction-button-width {
+    width: 25%;
+}
+.currency-wrap {
+    position:relative;
+}
+.currency-code {
+    position: absolute;
+    left: 8px;
+    top: 39px;
+}
+.text-currency {
+    padding-left: 20px;
 }
 
 
