@@ -5,5 +5,6 @@
     "make": "Mercedes", 
     "model": "model", 
     "value": 80000, 
-    "trade": true
+    "trade": true,
+    "image": "https://cdnblob.fastly.carvana.io/2002011181/pre/original/2002011181-edc-03.jpg?v=2022-09-02T23%3A04%3A21.000Z&dpr=1&optimize=low&width=1200"
 }]

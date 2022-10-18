@@ -24,6 +24,10 @@ Car.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         // value: {
         //     type: DataTypes.INTEGER,
         //     allowNull: false,
