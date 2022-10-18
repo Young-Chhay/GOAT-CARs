@@ -1,0 +1,32 @@
+<div class="custom-container">
+    <img src="./images/Home-main-wide2.png" class="main-image" alt="main homepage background image">
+    <img src="./images/G.O.A.T.png" alt="logo" class="main-logo">
+    <div class="text-white quote-box">
+        <h2 class="custom-font-size">"Without CLASSICS</h2>
+        <h3 class="custom-font-size">LIFE would have no peace"</h3>
+    </div>
+</div>
+
+<div class="gallery-container">
+  <div class="card-header col-md-12 text-center">
+    <h2>
+      CLASSICS GALLERY
+    </h2>
+  </div>
+  {{#each cars as |car| }}
+  <div class="col-md-4">
+    <p>
+      {{car.id}}
+      {{car.year}}
+      {{car.make}}
+      {{car.model}}
+    </p>
+  </div>
+  <div class="col-md-5">
+    <p>
+      Price:
+      {{car.value}}
+    </p>
+  </div>
+  {{/each}}
+</div>
