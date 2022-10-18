@@ -13,8 +13,8 @@
       Merchandise
     </h2>
   </div>
-  {{#each merchandises as |merchandise|}}
-  <div class="dish col-md-4">
+  {{#each merchandises as |merchandise| }}
+  <div class="col-md-4">
     <p>
       {{merchandise.id}}
       {{merchandise.title}}
@@ -28,6 +28,7 @@
       {{merchandise.price}}
     </p>
   </div>
+  {{/each}}
 </div>
 
 

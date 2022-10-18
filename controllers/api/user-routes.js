@@ -1,69 +1,77 @@
-// const router = require('express').Router();
-// const { User } = require('../../models');
+const router = require('express').Router();
+// const { response } = require('express');
+// const User = require('../../models/User')
+const { User } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
-// // GET all users
-// router.get('/', (req, res) => {
-//     User.findAll({
-//         attributes: { exclude: ['password'] }
-//     })
-//         .then(dbUserData => res.json(dbUserData))
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
+// POST a new user
+router.post('/', async (req, res) => {
+    try {
+        const userData = await User.create({
+            username: req.body.username,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+    });
 
-// // GET a single user
-// router.get('/:id', (req, res) => {
-//     User.findOne({
-//         attributes: { exclude: ['password'] },
-//         where: {
-//             id: req.params.id
-//         },
-//         include: [
-//             {
-//                 model: Car,
-//                 attributes: ['id', 'make', 'model', 'year', 'color', 'price', 'seller_id', 'buyer_id']
-//             },
-//             {
-//                 model: Sale,
-//                 attributes: ['id', 'car_id', 'user_id', 'sale_date']
-//             }
-//         ]
-//     })
-//         .then(dbUserData => {
-//             if (!dbUserData) {
-//                 res.status(404).json({ message: 'No user found with this id' });
-//                 return;
-//             }
-//             res.json(dbUserData);
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
+    req.session.save(() => {
+        req.session.logged_in = true;
 
-// // POST a new user
-// router.post('/', (req, res) => {
+        res.status(200).json(userData);
+    });
+} catch (err){
+    console.log(err);
+    res.status(500).json(err);
+}
 
-//     User.create({
-//         username: req.body.username,
-//         password: req.body.password
-//     })
-//         .then(dbUserData => {
-//             req.session.save(() => {
-//                 req.session.user_id = dbUserData.id;
-//                 req.session.username = dbUserData.username;
-//                 req.session.loggedIn = true;
+        // req.session.save(() => {
+        //     // req.session.user_id = userData.id;
+        //     // req.session.logged_in = true;
 
-//                 res.json(dbUserData);
-//             });
-//         });
-// });
+        //     res.status(200).json(userData);
+        // });
 
-// // POST login
+    // } catch (err) {
+    //     res.status(400).json(err);
+    // }
+});
+
+
+
+// POST login
+router.post('/login', async (req, res) => {
+    try {
+        const userData = await User.findOne({ where: { email: req.body.email } });
+
+        if (!userData) {
+            res
+                .status(400)
+                .json({ message: 'Incorrect email or password, please try again' });
+            return;
+        }
+
+        const validPassword = await userData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+            res
+                .status(400)
+                .json({ message: 'Incorrect email or password, please try again' });
+            return;
+        }
+
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+
+            res.json({ user: userData, message: 'You are now logged in!' });
+        });
+
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 // router.post('/login', (req, res) => {
 //     User.findOne({
 //         where: {
@@ -93,17 +101,17 @@
 //     });
 // });
 
-// // POST logout
-// router.post('/logout', (req, res) => {
-//     if (req.session.loggedIn) {
-//         req.session.destroy(() => {
-//             res.status(204).end();
-//         });
-//     }
-//     else {
-//         res.status(404).end();
-//     }
-// });
+// POST logout
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else {
+        res.status(404).end();
+    }
+});
 
 // // PUT update a user
 // router.put('/:id', withAuth, (req, res) => {
@@ -147,4 +155,4 @@
 //         });
 // });
 
-// module.exports = router;
+module.exports = router;

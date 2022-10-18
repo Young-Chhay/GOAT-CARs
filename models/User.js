@@ -16,7 +16,15 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -35,7 +43,7 @@ User.init(
         len: [8],
       },
     },
-    // // I was not sure if carown has to be boolean data type? (Richard)
+    // I was not sure if carown has to be boolean data type? (Richard)
     // carown: {
     //     type: DataTypes.STRING,
     //     allowNull: false,
@@ -51,21 +59,25 @@ User.init(
     //       len: [4],
     //     },
     //   },
-        // and id should be Number as well? 
-    car_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-                model: 'Car',
-                key: 'id'
-             }
-      },
+    //     // and id should be Number as well? 
+    // car_id: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false,
+    //     references: {
+    //             model: 'Car',
+    //             key: 'id'
+    //          }
+    //   },
   },
   {
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
+      },
+      beforeUpdate: async (updatedUserData) => {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
       },
     },
     sequelize,

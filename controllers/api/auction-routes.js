@@ -1,24 +1,29 @@
 // const router = require('express').Router();
 // const { User, Car, Auction } = require('../../models');
+// const Bid = require('../../models/Bid');
 // const withAuth = require('../../utils/auth');
 
 // // Auction routes
 // router.get('/', (req, res) => {
 //     Auction.findAll({
-//         attributes: [
-//             'id',
-//             'car_id',
-//             'user_id',
-//             'auction_date'
-//         ],
+//         // attributes: [
+//         //     'id',
+//         //     'car_id',
+//         //     'user_id',
+//         //     'auction_date'
+//         // ],
 //         include: [
-//             {
-//                 model: Car,
-//                 attributes: ['make', 'model', 'year', 'color', 'price']
-//             },
+//             // {
+//             //     model: Car,
+//             //     attributes: ['make', 'model', 'year', 'color', 'price']
+//             // },
 //             {
 //                 model: User,
-//                 attributes: ['username']
+//                 // attributes: ['username']
+//             },
+//             {
+//                 model: Bid,
+//                 // leave attributes out so we get all of them
 //             }
 //         ]
 //     })
@@ -64,11 +69,14 @@
 //         });
 // });
 
-// router.post('/', withAuth, (req, res) => {
+// // ******* put withauth back in once users are logged in
+// router.post('/', (req, res) => {
 //     Auction.create({
 //         car_id: req.body.car_id,
-//         user_id: req.session.user_id,
-//         sale_date: req.body.sale_date
+//         // change "body" to session once logged in works
+//         user_id: req.body.user_id,
+//         sale_date: req.body.sale_date,
+//         starting_bid: req.body.starting_bid
 //     })
 //         .then(dbAuctionData => res.json(dbAuctionData))
 //         .catch(err => {

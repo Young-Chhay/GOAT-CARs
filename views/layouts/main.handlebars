@@ -36,16 +36,16 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                         <a class="nav-link" href="/auction">AUCTION</a>
                         <a class="nav-link" href="/forum">FORUM</a>
-                        <a class="nav-link" href="#auction">MERCHANDISE</a>
+                        <a class="nav-link" href="/merchandise">MERCHANDISE</a>
                         <a class="nav-link" href="#contactUs">GALLERY</a>
-                        <div class="m-l-100">
-                            {{#if logged_in}}
-                            <a class="nav-link" href="/profile">PROFILE</a>
-                            <button class="no-button" id="logout">LOGOUT</button>
-                            {{else}}
-                            <a class="nav-link" href="/login">LOGIN</a>
-                            {{/if}}
-                        </div>
+                        {{#if logged_in}}
+                        <a class="nav-link" href="/profile">PROFILE</a>
+                        <a class="nav-link" id="logout">LOGOUT</a>
+                        
+                        {{else}}
+                        <a class="nav-link" href="/login">LOGIN</a>
+                        {{/if}}
+
                     </div>
                     
                 </div>
@@ -60,11 +60,16 @@
     <footer class="bg-light text-center">
         2022 TEAM FIVE GOAT CARS
     </footer>
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script src="js/modal.js"></script>
+    <script src="js/fbDummy.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="./js/newPost.js"></script>
 </body>
 
 </html>

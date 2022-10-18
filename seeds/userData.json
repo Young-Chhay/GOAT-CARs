@@ -1,23 +1,31 @@
 [
     {
-      "name": "Young",
+      "username": "Youung",
+      "firstName": "Young",
+      "lastName": "last",
       "email": "young@gmail.com",
       "password": "password12345"
     },
     {
-      "name": "Drum Hollidday",
+      "username": "Druum",
+      "firstName": "Drum",
+      "lastName" : "Hollidday",
       "email": "Drum@gmail.com",
       "password": "drumpassword12345"
     },
     {
-      "name": "Richard",
-      "email": "Richard0@gmail.com",
-      "password": "richardpassword12345"
+      "username": "richardyou94",
+      "firstName": "Richard",
+      "lastName" : "You",
+      "email": "richard94@gmail.com",
+      "password": "12345678"
     },
     {
-        "name": "Nathan Underwood",
-        "email": "Nathan@gmail.com",
-        "password": "nathanpassword54321"
+      "username": "Naaathan",
+      "firstName": "Nathan",
+      "lastName": "Underwood",
+      "email": "Nathan@gmail.com",
+      "password": "nathanpassword54321"
     }
   ]
   

@@ -1,11 +1,17 @@
 const sequelize = require('../config/connection');
-const { User, car, auction, merchandise } = require('../models');
+
+const { car, auction} = require('../models');
+const Merchandise = require('../models/Merchandise')
+const User = require('../models/User');
+const Forum = require('../models/Forum');
 
 const userData = require('./userData.json');
 const carData = require('./carData.json');
+const forumData = require('./forumData.json')
 
-// const auctionData = require('./.json');
+// const merchData = require('./.json');
 const merchData = require('./merchandiseData.json');
+
 
 
 const seedDatabase = async () => {
@@ -15,6 +21,18 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+
+  const forums = await Forum.bulkCreate(forumData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  const merchandise = await Merchandise.bulkCreate(merchData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+
 
 
   // for (const project of projectData) {

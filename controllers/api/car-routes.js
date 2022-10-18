@@ -5,20 +5,22 @@
 // // Get all cars in the inventory 
 // router.get('/', (req, res) => {
 //     Car.findAll({
-//         attributes: [
-//             'id',
-//             'make',
-//             'model',
-//             'year',
-//             'color',
-//             'price',
-//             'seller_id',
-//             'buyer_id'
-//         ],
+//         // Bring these back when working
+//         // attributes: [
+//         //     'id',
+//         //     'make',
+//         //     'model',
+//         //     'year',
+//         //     'color',
+//         //     'price',
+//         //     'seller_id',
+//         //     'buyer_id'
+//         // ],
 //         include: [
 //             {
 //                 model: User,
-//                 attributes: ['username']
+//                 // Bring attributes back once working
+//                 // attributes: ['username']
 //             }
 //         ]
 //     })
@@ -66,13 +68,14 @@
 // });
 
 // // Create a new car
-// router.post('/', withAuth, (req, res) => {
+// router.post('/', (req, res) => {
 //     Car.create({
 //         make: req.body.make,
 //         model: req.body.model,
 //         year: req.body.year,
 //         color: req.body.color,
-//         price: req.body.price,
+//         // rename from price to Value
+//         value: req.body.value,
 //         seller_id: req.session.user_id
 //     })
 //         .then(dbCarData => res.json(dbCarData))
@@ -90,7 +93,7 @@
 //             model: req.body.model,
 //             year: req.body.year,
 //             color: req.body.color,
-//             price: req.body.price,
+//             value: req.body.value,
 //             seller_id: req.session.user_id
 //         },
 //         {

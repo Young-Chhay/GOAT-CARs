@@ -1,3 +1,7 @@
+/* General Utility CSS */
+.hide {
+    display: none;
+}
 /* Whole Body */
 body {
     background-color: #222831;
@@ -105,6 +109,9 @@ footer {
 .forum-background {
     background-color: #ECf0FE
 }
+.white-background {
+    background-color: #ECf0FE
+}
 .forum-nav {
     background-color: #ECf0FE;
 }
@@ -191,6 +198,72 @@ footer {
 .comment-textoutput {
     padding:30px;
 }
+
+/* Profile Page */
+.profile-image {
+    width: 100%;
+    height: auto;
+}
+.profile-image img {
+    width: 150px;
+    height: auto;
+}
+.btn-image {
+    padding: 15px 70px 15px 70px;
+}
+.button-13 {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100px;
+    margin:20px;
+    font-size: 1.2rem;
+  }
+  
+  .button-13:hover {
+    background-color: #f7fafa;
+  }
+  
+  .button-13:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+  }
+  .profile-information {
+    padding: 30px 20px 20px 20px;
+  }
+  .profile-information h3 {
+    font-size: 1.2rem;
+    margin: 15px;
+  }
+  .profile-btn-edit {
+    width: 200px;
+  }
+
+  /* Merchandise */
+.merchandise-container h2 {
+    color: white;
+}
+.merchandise-container p {
+    color: white;
+}
+
 /* Reponsive */
 
 @media (max-width: 414px) {
