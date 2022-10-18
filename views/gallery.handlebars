@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <title>Merchandise</title>
+</head>
+
 <div class="custom-container">
     <img src="./images/Home-main-wide2.png" class="main-image" alt="main homepage background image">
     <img src="./images/G.O.A.T.png" alt="logo" class="main-logo">
@@ -13,20 +25,21 @@
       CLASSICS GALLERY
     </h2>
   </div>
+  <div id="gallery-card-container">
   {{#each cars as |car| }}
-  <div class="col-md-4">
-    <p>
-      {{car.id}}
-      {{car.year}}
-      {{car.make}}
-      {{car.model}}
-    </p>
+    <div class="card" style="width: 18rem;">
+      <img src="{{car.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{car.make}}</h5>
+        <p class="card-text">Model:
+          {{car.model}}</p>
+          <p class="card-text">Price:
+          ${{car.value}}</p>
+        <a href="#" class="btn btn-primary">Buy Now!</a>
+      </div>
+    </div>
+    {{/each}}
   </div>
-  <div class="col-md-5">
-    <p>
-      Price:
-      {{car.value}}
-    </p>
-  </div>
-  {{/each}}
 </div>
+
+</html>
