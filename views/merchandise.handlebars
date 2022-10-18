@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <title>Merchandise</title>
+</head>
+
+
 <div class="custom-container">
     <img src="./images/Home-main-wide2.png" class="main-image" alt="main homepage background image">
     <img src="./images/G.O.A.T.png" alt="logo" class="main-logo">
@@ -7,29 +20,54 @@
     </div>
 </div>
 
+{{!-- <div class="merchandise-container">
+  <div class="card-header col-md-12 text-center">
+    <h2>
+      Merchandise
+    </h2>
+  </div>
+  {{#each Merchandise as |merchandise|}}
+  <div class="dish col-md-4">
+    <p>
+      {{Merchandise.id}}
+      {{Merchandise.title}}
+    </p>
+  </div>
+  <div class="col-md-5">
+    <p>
+      Description:
+      {{Merchandise.description}}
+      Price:
+      {{Merchandise.price}}
+    </p>
+  </div>
+  {{/each}}
+</div> --}}
+
 <div class="merchandise-container">
   <div class="card-header col-md-12 text-center">
     <h2>
       Merchandise
     </h2>
   </div>
-  {{#each merchandises as |merchandise| }}
-  <div class="col-md-4">
-    <p>
-      {{merchandise.id}}
-      {{merchandise.title}}
-    </p>
+  <div id="merch-card-container">
+    {{#each merchandises as |merchandise|}}
+    <div class="card" style="width: 18rem;">
+      <img src="{{merchandise.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{merchandise.title}}</h5>
+        <p class="card-text">Description:
+          {{merchandise.description}}</p>
+          <p class="card-text">Price:
+          ${{merchandise.price}}</p>
+        <a href="#" class="btn btn-primary">Buy Now!</a>
+      </div>
+    </div>
+    {{/each}}
   </div>
-  <div class="col-md-5">
-    <p>
-      Description:
-      {{merchandise.description}}
-      Price:
-      {{merchandise.price}}
-    </p>
-  </div>
-  {{/each}}
 </div>
+
+</html>
 
 
 

@@ -257,12 +257,28 @@ footer {
   }
 
   /* Merchandise */
+#merch-card-container {
+    display: flex;
+}
+
 .merchandise-container h2 {
-    color: white;
+    color: black;
 }
+
 .merchandise-container p {
-    color: white;
+    color: black;
+
 }
+
+.card-text {
+    color: black;
+}
+
+.card img {
+    height: 250px;
+    width: 300px;
+}
+
 
 /* Reponsive */
 
