@@ -170,10 +170,30 @@ router.get('/free-talk', async (req, res) => {
     }
 });
 
-router.get('/view-post', (req, res) => {
-    res.render('forum-view-post', {
-        logged_in: req.session.logged_in
-    });
+router.get('/view-post/:id', async (req, res) => {
+    try {
+        const forumData = await Forum.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+                // {
+                //     model: Comment,
+                //     attributes: ['comment'],
+                // }
+            ],
+        });
+        const forum = forumData.get({plain:true});
+
+        res.render('forum-view-post', {
+            forum,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+    
 });
 
 router.get('/new-post', (req, res) => {

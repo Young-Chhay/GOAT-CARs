@@ -9,6 +9,7 @@
                         </div>
                     </div>
                     <div id="auction-id" class="hide">{{auction.id}}</div>
+                    <div id="current-bid-view" class="hide">{{auction.current_bid}}</div>
                     <div class="m-t-30 auction-post-title">
                         <h1>{{auction.title}}</h4>
                     </div>
@@ -33,7 +34,7 @@
                         </div>
                     </div>
                     <div class="m-t-15 text-center">
-                        <h2>Current BID: <span class="m-l-30"></span> ${{format_amount auction.current_bid}} </h2>
+                        <h2>Current BID: <span class="m-l-30">${{format_amount auction.current_bid}}</span> </h2>
                     </div>
                     
                     <hr>

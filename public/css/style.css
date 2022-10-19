@@ -198,7 +198,12 @@ footer {
 .comment-textoutput {
     padding:30px;
 }
-
+.small-width {
+    width: 70px;
+}
+.medium-width {
+    width:100px;
+}
 /* Profile Page */
 .profile-image {
     width: 100%;
@@ -255,6 +260,7 @@ footer {
   .profile-btn-edit {
     width: 200px;
   }
+
 
   /* Merchandise */
 #merch-card-container {

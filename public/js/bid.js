@@ -5,8 +5,12 @@ const bidHandler = async (event) => {
     
     const bid = document.querySelector('#bid-amount').value;
     const auction = document.querySelector('#auction-id').innerHTML;
-    console.log(auction);
-    if (!bid) {
+    const currentBid = document.querySelector('#current-bid-view').innerHTML;
+    
+
+        if (!bid) {
+        $('#alert-bid').removeClass('hide');
+    } else if (bid < currentBid) {
         $('#alert-bid').removeClass('hide');
     } else {
         const response = await fetch(`/api/auction/${auction}`, {
