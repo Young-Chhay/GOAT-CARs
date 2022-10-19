@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="gallery-container" style="color: white;">
+<div class="gallery-container" style="color: rgb(100, 9, 9);">
   <div class="card-header col-md-12 text-center">
     <h2>
       CLASSICS GALLERY
@@ -28,15 +28,17 @@
   <div id="gallery-card-container">
   {{#each cars as |car| }}
 
-    <div class="card" style="width: 18rem;">
+    <div class="card card-cars container-fluid shadow-lg-custom p-3 mb-5 bg-white rounded" style="width: 80%;">
       <img src="{{car.image}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{car.make}}</h5>
-        <p class="card-text">Model:
-          {{car.model}}</p>
-          <p class="card-text">Price:
+        <p class="car-card-text">Model:
+          {{car.year}} {{car.model}}</p>
+          <p class="car-card-text">About:
+          {{car.description}}</p>
+          <p class="car-card-text">Price:
           ${{car.value}}</p>
-        <a href="#" class="btn btn-primary">Buy Now!</a>
+        <a href="#" class="btn btn-primary">Interested?</a>
       </div>
     </div>
     {{/each}}

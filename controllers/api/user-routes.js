@@ -75,46 +75,114 @@ router.post('/logout', (req, res) => {
     }
 });
 
-// // PUT update a user
-// router.put('/:id', withAuth, (req, res) => {
-//     User.update(req.body, {
-//         individualHooks: true,
-//         where: {
-//             id: req.params.id
-//         }
-//     })
-//         .then(dbUserData => {
-//             if (!dbUserData[0]) {
-//                 res.status(404).json({ message: 'No user found with this id' });
-//                 return;
+// router.put('/:id', withAuth, async (req, res) => {
+//     try {
+//         const userData = await User.update( 
+//             {
+//                 username: req.body.username,
+//                 firstName: req.body.firstName,
+//                 lastName: req.body.lastName,
+//             },
+//             {
+//                 where: {
+//                     id: req.params.id,
+//                 },
 //             }
-//             res.json(dbUserData);
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
+//         );
+            
+
+//         // if (!userData[0]) {
+//         //     res.status(404).json({ message: 'No user found with this id' });
+//         //     return;
+//         // }
+
+//         res.status(200).json(userData);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
 // });
 
+// // Change user password
+// // router.put('/password/:id', withAuth, async (req, res) => {
+// //     try {
+// //         const userData = await User.update(req.body, {
+// //             individualHooks: true,
+// //             where: {
+// //                 id: req.params.id
+// //             }
+// //         });
 
-// // DELETE a user
-// router.delete('/:id', withAuth, (req, res) => {
-//     User.destroy({
-//         where: {
-//             id: req.params.id
-//         }
-//     })
-//         .then(dbUserData => {
-//             if (!dbUserData) {
-//                 res.status(404).json({ message: 'No user found with this id' });
-//                 return;
-//             }
-//             res.json(dbUserData);
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
+// //         if (!userData[0]) {
+// //             res.status(404).json({ message: 'No user found with this id' });
+// //             return;
+// //         }
+
+// //         res.status(200).json(userData);
+// //     } catch (err) {
+// //         res.status(500).json(err);
+// //     }
+// // });
+
+// // // Change username
+// // router.put('/username/:id', withAuth, async (req, res) => {
+// //     try {
+// //         const userData = await User.update(req.body, {
+// //             individualHooks: true,
+// //             where: {
+// //                 id: req.params.id
+// //             }
+// //         });
+
+// //         if (!userData[0]) {
+// //             res.status(404).json({ message: 'No user found with this id' });
+// //             return;
+// //         }
+
+// //         res.status(200).json(userData);
+// //     } catch (err) {
+// //         res.status(500).json(err);
+// //     }
+// // });
+
+// // // Change first & last name
+// // router.put('/name/:id', withAuth, async (req, res) => {
+// //     try {
+// //         const userData = await User.update(req.body, {
+// //             individualHooks: true,
+// //             where: {
+// //                 id: req.params.id
+// //             }
+// //         });
+
+// //         if (!userData[0]) {
+// //             res.status(404).json({ message: 'No user found with this id' });
+// //             return;
+// //         }   
+
+// //         res.status(200).json(userData);
+// //     } catch (err) {
+// //         res.status(500).json(err);
+// //     }
+// // });
+
+// // // Delete user account
+// // router.delete('/:id', withAuth, async (req, res) => {
+// //     try {
+// //         const userData = await User.destroy({
+// //             where: {
+// //                 id: req.params.id
+// //             }
+// //         });
+
+// //         if (!userData) {
+// //             res.status(404).json({ message: 'No user found with this id' });
+// //             return;
+// //         }
+
+// //         res.status(200).json(userData);
+// //     } catch (err) {
+// //         res.status(500).json(err);
+// //     }
+// // });
 
 module.exports = router;

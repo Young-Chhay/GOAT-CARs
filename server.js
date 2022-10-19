@@ -47,6 +47,7 @@ app.use("/", express.static(path.join(__dirname, 'public')));
 app.use("/forum", express.static(path.join(__dirname, 'public')));
 app.use("/forum/view-post", express.static(path.join(__dirname, 'public')));
 app.use("/merchandise", express.static(path.join(__dirname, 'public')));
+app.use("/merchandise/", express.static(path.join(__dirname, 'public')));
 app.use("/gallery", express.static(path.join(__dirname, 'public')));
 app.use("/auction", express.static(path.join(__dirname, 'public')));
 app.use("/auction/bid", express.static(path.join(__dirname, 'public')));
