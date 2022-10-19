@@ -76,6 +76,7 @@ router.post('/', async (req, res) => {
             model: req.body.model,
             value: req.body.value,
             image: req.body.image,
+            description: req.body.description,
             user_id: req.session.user_id,
         });
         console.log('it has signal of post request!')
