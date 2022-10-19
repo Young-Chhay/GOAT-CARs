@@ -32,6 +32,10 @@ Car.init(
             type: DataTypes.STRING,
             allowNull: true
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
