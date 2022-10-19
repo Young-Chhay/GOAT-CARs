@@ -300,6 +300,16 @@ footer {
 .text-currency {
     padding-left: 20px;
 }
+
+/* Gallery styling */
+.car-card-text {
+    color: black;
+    font-size: 1rem;
+}
+
+.shadow-lg-custom {
+    box-shadow: 0 1rem 3rem rgba(111, 51, 223, 0.5)!important;
+
 .btn-bid {
     width: 30%;
 }
