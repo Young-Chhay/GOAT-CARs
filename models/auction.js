@@ -26,9 +26,18 @@ Auction.init(
         time_end: {
             type: DataTypes.STRING,
         },
+        date_created: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+        },
         // active boolean for auction data default true 
 
         starting_bid: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        current_bid: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },

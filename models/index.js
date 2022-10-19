@@ -1,9 +1,10 @@
-const User = require('./User')
+const User = require('./User');
 const Forum = require('./Forum');
 const Car = require('./Car');
 const Auction = require('./Auction');
 const Bid = require('./Bid');
 const Merchandise = require('./Merchandise')
+const Comment = require('./Comment');
 
 User.hasMany(Forum, {
     foreignKey: 'user_id',
@@ -32,6 +33,43 @@ User.hasMany(Auction, {
 
 Auction.belongsTo(User, {
     foreignKey: 'user_id',
+});
+
+User.hasMany(Bid, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Bid.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+User.hasMany(Comment, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Comment.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+
+Auction.hasMany(Bid, {
+    foreignKey: 'auction_id',
+    onDelete: 'CASCADE'
+});
+
+Bid.belongsTo(Auction, {
+    foreignKey: 'auction_id'
+});
+
+Forum.hasMany(Comment, {
+    foreignKey: 'forum_id',
+    onDelete: 'CASCADE'
+});
+
+Comment.belongsTo(Forum, {
+    foreignKey: 'forum_id'
 });
 
 // // Sale belongs to User (A sale can only be for one user)
@@ -64,7 +102,7 @@ Auction.belongsTo(Car, {
     foreignKey: 'car_id',
 });
 
-module.exports = { User, Forum, Auction, Bid, Car, Merchandise};
+module.exports = { User, Forum, Auction, Bid, Car, Merchandise, Comment};
 
 
 
