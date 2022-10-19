@@ -1,10 +1,9 @@
-// create a sequelize model for our table for bidding
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
-class Bid extends Model { }
+class Comment extends Model { }
 
-Bid.init(
+Comment.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,11 +11,11 @@ Bid.init(
             primaryKey: true,
             autoIncrement: true
         },
-        auction_id: {
+        forum_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'auction',
+                model: 'forum',
                 key: 'id'
             }
         },
@@ -28,9 +27,8 @@ Bid.init(
                 key: 'id'
             }
         },
-        // *** use this as the highest bid 
-        bid_amount: {
-            type: DataTypes.INTEGER,
+        comment: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
     },
@@ -42,5 +40,4 @@ Bid.init(
     }
 );
 
-module.exports = Bid;
-
+module.exports = Comment;

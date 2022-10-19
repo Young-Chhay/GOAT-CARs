@@ -198,7 +198,12 @@ footer {
 .comment-textoutput {
     padding:30px;
 }
-
+.small-width {
+    width: 70px;
+}
+.medium-width {
+    width:100px;
+}
 /* Profile Page */
 .profile-image {
     width: 100%;
@@ -256,6 +261,7 @@ footer {
     width: 200px;
   }
 
+
   /* Merchandise */
 #merch-card-container {
     display: flex;
@@ -294,7 +300,13 @@ footer {
 .text-currency {
     padding-left: 20px;
 }
-
+.btn-bid {
+    width: 30%;
+}
+.solid-box {
+    border: 1px solid black;
+    border-radius: 1rem;
+}
 
 /* Reponsive */
 
