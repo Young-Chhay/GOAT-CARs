@@ -2,7 +2,7 @@
     {
     "id": 1, 
     "title": "1960's Mercedes Emblem", 
-    "description": "Vintage car emblem taken off a famous Mercedes from James Bond movie", 
+    "description": "Emblem taken off a famous Mercedes from James Bond movie", 
     "price": 1000000000, 
     "image": "https://thumbs.dreamstime.com/b/emblem-car-retro-old-mercedes-benz-close-up-kharkiv-ukraine-may-117795926.jpg"
 },
@@ -19,5 +19,22 @@
 "description": "Block out the sun and the 70s Car Club hate with this sweet snapback", 
 "price": 30, 
 "image": "https://i.etsystatic.com/32127616/r/il/bc3cb3/3897216259/il_794xN.3897216259_m6wu.jpg"
+}, 
+
+{
+    "id": 4, 
+    "title": "1960s Bug Car Model ", 
+    "description": "Slug bug, blue! You get to punch someone in the arm", 
+    "price": 45, 
+    "image": "https://web4.hobbylinc.com/gr/rmx/rmx854192_285.jpg"  
+}, 
+{
+    "id": 5, 
+    "title": "1960s Ferrari Poster", 
+    "description": "See paradise every day with this poster hanging from your wall!", 
+    "price": 30, 
+    "image": "https://i.pinimg.com/736x/b5/21/4f/b5214fffb127c5eafd8b30fb7bb11553.jpg"  
 }
+
+
 ]
