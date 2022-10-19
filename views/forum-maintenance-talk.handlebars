@@ -11,7 +11,7 @@
                         <thead>
                             <tr>
                                 <th colspan="2" scope="colgroup" class="forum-sort">Sort by: Recent Activity</th>
-                                <th colspan="3" scope="colgroup">
+                                <th colspan="4" scope="colgroup">
                                     <div class="text-right m-b-15">
                                         <a href="/forum/new-post">
                                         <button type="button" class="btn btn-primary btn-create">Create New Post</button>
@@ -24,30 +24,31 @@
                                 <th scope="col"><i class="bi bi-chat-dots"></i></th>
                                 <th scope="col"><i class="bi bi-heart-fill"></i></th>
                                 <th scope="col"><i class="bi bi-eye"></i></th>
-                                <th scope="col">Date Posted</th>
+                                <th colspan="2" scope="colgroup">Date Posted</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{#each forums as |forum| }}
+                           {{#each forums as |forum| }}
                             <tr>
                                 <td>
                                     <div>
                                         {{forum.title}}
+                                        {{!-- <a href="/forum/post/{{forum.id}}" class="stretched-link btn"></a> --}}
                                     </div>
                                     <div class="row">
                                         <div class="col">
                                         {{forum.user.username}}
                                         </div>
                                         <div class="col">
-                                        {{forum.category}}
+                                        {{forum.category}} 
                                         </div>
                                     </div>
-                                    
                                 </td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>{{format_date forum.date_created}}</td>
+                                <td class="small-width">0</td>
+                                <td class="small-width">0</td>
+                                <td class="small-width">0</td>
+                                <td class="medium-width">{{format_date forum.date_created}}</td>
+                                <td class="small-width"><a href="/forum/view-post/{{forum.id}}" class=" btn-primary btn">View</a> </td> 
                             </tr>
                             {{/each}}
                         </tbody>
