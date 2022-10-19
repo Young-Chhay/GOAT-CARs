@@ -1,10 +1,10 @@
-const User = require('./User');
-const Forum = require('./Forum');
-const Car = require('./Car');
-const Auction = require('./Auction');
-const Bid = require('./Bid');
-const Merchandise = require('./Merchandise')
-const Comment = require('./Comment');
+const User = require('./user');
+const Forum = require('./forum');
+const Car = require('./car');
+const Auction = require('./auction');
+const Bid = require('./bid');
+const Merchandise = require('./merchandise')
+const Comment = require('./comment');
 
 User.hasMany(Forum, {
     foreignKey: 'user_id',
