@@ -1,26 +1,26 @@
 const router = require('express').Router();
-const { User, Auction } = require('../models');
+const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/auction', async (req, res) => {
-    try {
-        const auctionData = await Auction.findOne({
-            where: {
-                active: true
-            },
-        });
+// router.get('/auction', async (req, res) => {
+//     try {
+//         const auctionData = await Auction.findOne({
+//             where: {
+//                 active: true
+//             },
+//         });
 
-        const auctions = auctionData.get({ plain: true });
+//         const auctions = auctionData.get({ plain: true });
 
-        res.render('auction', {
-            auctions
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+//         res.render('auction', {
+//             auctions
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
 
-});
+// });
 
 router.get('/', async (req, res) => {
     try {

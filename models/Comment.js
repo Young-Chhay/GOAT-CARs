@@ -36,7 +36,7 @@ Comment.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'bid'
+        modelName: 'comment'
     }
 );
 

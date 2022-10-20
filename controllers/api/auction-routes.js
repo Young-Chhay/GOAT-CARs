@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Auction = require('../../models/Auction');
+const { Auction } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {

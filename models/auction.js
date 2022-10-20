@@ -41,7 +41,14 @@ Auction.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-                
+        bider_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
         car_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
