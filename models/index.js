@@ -34,15 +34,6 @@ Auction.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-User.hasMany(Bid, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
-Bid.belongsTo(User, {
-    foreignKey: 'user_id'
-});
-
 User.hasMany(Comment, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
