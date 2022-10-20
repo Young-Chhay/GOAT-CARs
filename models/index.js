@@ -52,7 +52,6 @@ Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-
 // Auction.hasMany(Bid, {
 //     foreignKey: 'auction_id',
 //     onDelete: 'CASCADE'
@@ -72,7 +71,6 @@ Comment.belongsTo(Forum, {
 });
 
 // // Sale belongs to User (A sale can only be for one user)
-
 
 // User.hasMany(Bid, {
 //     foreignKey: 'user_id',

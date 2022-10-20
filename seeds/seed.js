@@ -1,9 +1,9 @@
 const sequelize = require('../config/connection');
 
-const Merchandise = require('../models/Merchandise')
-const User = require('../models/User');
-const Forum = require('../models/Forum');
-const Car = require('../models/Car')
+const Merchandise = require('../models/merchandise')
+const User = require('../models/user');
+const Forum = require('../models/forum');
+const Car = require('../models/car')
 
 // const Auction = require('../models/Auction')
 
