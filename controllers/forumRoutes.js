@@ -1,8 +1,5 @@
 const router = require('express').Router();
-const Forum = require('../models/Forum');
-const User = require('../models/User');
-const withAuth = require('../utils/auth');
-const { QueryTypes } = require('sequelize');
+const {Forum, User} = require('../models');
 
 router.get('/', async (req,res) => {
     try {

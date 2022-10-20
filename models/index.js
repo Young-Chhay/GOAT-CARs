@@ -1,9 +1,8 @@
 const User = require('./User');
-const Forum = require('./Forum');
 const Car = require('./Car');
-const Auction = require('./Auction');
-const Bid = require('./Bid');
 const Merchandise = require('./Merchandise')
+const Forum = require('./Forum');
+const Auction = require('./Auction');
 const Comment = require('./Comment');
 
 User.hasMany(Forum, {
@@ -54,14 +53,14 @@ Comment.belongsTo(User, {
 });
 
 
-Auction.hasMany(Bid, {
-    foreignKey: 'auction_id',
-    onDelete: 'CASCADE'
-});
+// Auction.hasMany(Bid, {
+//     foreignKey: 'auction_id',
+//     onDelete: 'CASCADE'
+// });
 
-Bid.belongsTo(Auction, {
-    foreignKey: 'auction_id'
-});
+// Bid.belongsTo(Auction, {
+//     foreignKey: 'auction_id'
+// });
 
 Forum.hasMany(Comment, {
     foreignKey: 'forum_id',
@@ -102,7 +101,7 @@ Auction.belongsTo(Car, {
     foreignKey: 'car_id',
 });
 
-module.exports = { User, Forum, Auction, Bid, Car, Merchandise, Comment};
+module.exports = { User, Forum, Auction , Car, Merchandise, Comment};
 
 
 

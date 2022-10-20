@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { User, Car, Auction, Bid } = require('../models');
-// const Bid = require('../models/Bid');
-const withAuth = require('../utils/auth');
+const { User, Car, Auction } = require('../models');
+
+
 
 // Auction routes
 router.get('/', async (req, res) => {
