@@ -3,10 +3,17 @@ const router = require('express').Router();
 // const User = require('../../models/User')
 const { User } = require('../../models');
 // const withAuth = require('../../utils/auth');
+const { validationResult } = require('express-validator');
+const { validateEmail } = require('../../utils/validator');
 
 // POST a new user
 router.post('/', async (req, res) => {
     try {
+        const errors = validationResult(req.body.email)
+        if (!errors.isEmpty()) {
+            return "error"
+        }
+        
         const userData = await User.create({
             username: req.body.username,
             firstName: req.body.firstName,
