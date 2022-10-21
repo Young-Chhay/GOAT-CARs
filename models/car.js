@@ -43,11 +43,6 @@ Car.init(
                 key: 'id',
             },
         },
-        // NOt using trade
-        // trade: {
-        //   type: DataTypes.BOOLEAN,
-        //   allowNull: false,
-        // },
     },
     {
         sequelize,

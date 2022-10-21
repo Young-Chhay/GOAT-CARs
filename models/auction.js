@@ -38,8 +38,8 @@ Auction.init(
             allowNull: false,
         },
         current_bid: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+            type: DataTypes.BIGINT,
+            allowNull: true,
         },
         bider_id: {
             type: DataTypes.INTEGER,

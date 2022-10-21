@@ -10,12 +10,7 @@ const auctionPostHandler = async (event) => {
     const descr = $('#auction-post-descr').val();
     
 
-    console.log(title);
-    console.log(car);
-    console.log(endDate);
-    console.log(endHour);
-    console.log(startBid);
-    console.log(descr);
+    
     if (title && car && endDate && endHour && startBid && descr) {
         const response = await fetch('/api/auction', {
             method: 'POST',

@@ -1,31 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="Description" content="Enter your description here" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-  <title>Merchandise</title>
-</head>
-
-<div class="custom-container">
+{{!-- <div class="custom-container">
     <img src="./images/Home-main-wide2.png" class="main-image" alt="main homepage background image">
     <img src="./images/G.O.A.T.png" alt="logo" class="main-logo">
     <div class="text-white quote-box">
         <h2 class="custom-font-size">"Without CLASSICS</h2>
         <h3 class="custom-font-size">LIFE would have no peace"</h3>
     </div>
-</div>
+</div> --}}
 
-<div class="gallery-container" style="color: rgb(100, 9, 9);">
-  <div class="card-header col-md-12 text-center">
-    <h2>
-      CLASSICS GALLERY
-    </h2>
+<div class="gallery-container bg-light"  >
+  <div class="forum-category-name text-center p-t-50 auction" style="min-height:250px;" >
+      <h1>Classic Gallery</h1>
   </div>
-  <div id="gallery-card-container">
+  <div id="gallery-card-container" class="bg-light" >
   {{#each cars as |car| }}
 
     <div class="card card-cars container-fluid shadow-lg-custom p-3 mb-5 bg-white rounded" style="width: 80%;">

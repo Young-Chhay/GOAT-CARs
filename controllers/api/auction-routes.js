@@ -39,4 +39,19 @@ router.put('/:id', async (req, res) => {
     }
 })
 
+router.delete('/:id', async (req, res) => {
+    try {
+        const auction = Auction.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        if (auction) {
+            res.status(200).end();
+        } res.status(404).end();
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;
