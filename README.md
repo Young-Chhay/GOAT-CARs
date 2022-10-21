@@ -37,7 +37,13 @@ Deployed Webpage
 
 Screenshots of Functioning Application:
 
-<img src= "https://github.com/aurorayihe/ProjectOne_BreakHub_theThunderCats/blob/main/assets/image/demo1.JPG" alt="break-hub-1">
+![goatcars herokuapp com_](https://user-images.githubusercontent.com/98553537/197089761-40f158ce-7b6b-4374-a5aa-7d38703bdf12.png)
+![goatcars herokuapp com_login](https://user-images.githubusercontent.com/98553537/197089765-7af1742d-1df4-4c73-94cc-896261b66f1c.png)
+![goatcars herokuapp com_gallery_](https://user-images.githubusercontent.com/98553537/197089768-6be120ef-7001-457e-ac7c-ef4ebb76bdae.png)
+![goatcars herokuapp com_merchandise_](https://user-images.githubusercontent.com/98553537/197089769-c95fe5f4-8bb1-4650-92a0-a46f8cd61cae.png)
+![goatcars herokuapp com_forum_](https://user-images.githubusercontent.com/98553537/197089772-9d0f41c7-929e-4649-b4c5-d2eb11225542.png)
+![goatcars herokuapp com_auction_](https://user-images.githubusercontent.com/98553537/197089775-504ae54c-6a45-4020-8cf5-9fa140c48357.png)
+
 
 Future Application Feature Goals
 ---------------------
