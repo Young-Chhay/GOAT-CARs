@@ -35,6 +35,20 @@ Deployed Webpage
 ---------------------
 <p>https://goatcars.herokuapp.com/</p>
 
+
+Installation & Usage
+---------------------
+- git clone our project
+- cd to the folder
+- npm i
+- Go to bid.js in public/js folder and change the link of socket.io connection into 'http://localhost:3001'
+- Go to .envEXAMPLE file to add the password of root user of mysql. 
+- Create Database in Mysql
+- node seeds/seed.js for seeding the data. 
+- npm start to start the server
+- visit localhost:3001 
+- to experience better experience incorporate using incognito web browser of Google Chrome, to experience real-time bid!
+
 ---------------------
 
 Screenshots of Functioning Application:
