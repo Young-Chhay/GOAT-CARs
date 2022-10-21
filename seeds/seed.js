@@ -3,7 +3,6 @@ const { User, Car, Merchandise, Forum } = require('../models');
 
 
 
-
 const userData = require('./userData.json');
 const carData = require('./carData.json');
 const forumData = require('./forumData.json')

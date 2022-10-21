@@ -285,6 +285,14 @@ footer {
     width: 300px;
 }
 
+#merch-buy-header {
+    color: white;
+}
+
+#buy-button {
+    max-width: 200px;
+}
+
 /* Auction Page */
 .auction-button-width {
     width: 25%;
