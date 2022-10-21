@@ -3,7 +3,7 @@
 Team 5 The GOATs
 ---------------------
 Members:
-- Richard Yu
+- Richard You
 - Drum Holliday
 - Young Chhay
 - Nathan Underwood 
