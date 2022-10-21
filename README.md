@@ -26,7 +26,9 @@ Technology Used
 
 Important Links
 ---------------------
-<p>Link to Application Repo:
+
+Link to Application Repo
+---------------------
 https://github.com/Young-Chhay/GOAT-</p>
 
 Deployed Webpage
