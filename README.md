@@ -29,7 +29,7 @@ Important Links
 
 Link to Application Repo
 ---------------------
-https://github.com/Young-Chhay/GOAT-</p>
+https://github.com/Young-Chhay/GOAT-CARs</p>
 
 Deployed Webpage
 ---------------------
