@@ -29,6 +29,7 @@ const loginFormHandler = async (event) => {
   const signUpFormHandler = async (event) => {
     event.preventDefault();
     alertMsg.addClass('hide');
+    $('#emailValidate').addClass('hide');
     $('#alert-signup').addClass('hide');
     $('#alert-term').addClass('hide');
     const username = document.querySelector('#signup-username').value.trim();

@@ -6,9 +6,15 @@
     <main class="main-page">
         <div class="forum-box container">
             <div class="text-right m-b-30">
+                {{#if logged_in}}
                 <a href="/auction/new-auction">
                     <button type="button" class="btn btn-primary auction-button-width">POST YOUR AUCTION</button>
                 </a>
+                {{else}}
+                <a href="/login">
+                    <button type="button" class="btn btn-primary auction-button-width">POST YOUR AUCTION</button>
+                </a>
+                {{/if}}
             </div>
             <div class="forum-category-list row row-cols-1 row-cols-md-2 g-4">
                 {{#each auctions as |auction|}}

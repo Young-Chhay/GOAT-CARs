@@ -3,25 +3,6 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-// router.get('/auction', async (req, res) => {
-//     try {
-//         const auctionData = await Auction.findOne({
-//             where: {
-//                 active: true
-//             },
-//         });
-
-//         const auctions = auctionData.get({ plain: true });
-
-//         res.render('auction', {
-//             auctions
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-
-// });
-
 router.get('/', async (req, res) => {
     try {
         res.render('homepage', {
@@ -68,12 +49,6 @@ router.get('/profile', async (req, res) => {
     }
 });
 
-// router.get('/forum', (req, res) => {
-//     res.render('forum-main');
-// })
 
-// router.get('/forum/allposts', (req, res) => {
-//     res.render('forum-table');
-// })
 
 module.exports = router;

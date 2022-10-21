@@ -44,15 +44,6 @@ Comment.belongsTo(User, {
 });
 
 
-// Auction.hasMany(Bid, {
-//     foreignKey: 'auction_id',
-//     onDelete: 'CASCADE'
-// });
-
-// Bid.belongsTo(Auction, {
-//     foreignKey: 'auction_id'
-// });
-
 Forum.hasMany(Comment, {
     foreignKey: 'forum_id',
     onDelete: 'CASCADE'
@@ -62,26 +53,6 @@ Comment.belongsTo(Forum, {
     foreignKey: 'forum_id'
 });
 
-// // Sale belongs to User (A sale can only be for one user)
-
-
-// User.hasMany(Bid, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// })
-
-// Bid.belongsTo(User, {
-//     foreignKey: 'user_id',
-// });
-
-// Auction.hasMany(Bid, {
-//     foreignKey: 'auction_id',
-//     onDelete: 'CASCADE'
-// });
-
-// Bid.belongsTo(Auction, {
-//     foreignKey: 'auction_id',
-// });
 
 Car.hasOne(Auction, {
     foreignKey: 'car_id',

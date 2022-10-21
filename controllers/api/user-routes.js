@@ -1,13 +1,14 @@
 const router = require('express').Router();
-// const { response } = require('express');
-// const User = require('../../models/User')
 const { User } = require('../../models');
-// const withAuth = require('../../utils/auth');
 const { validationResult } = require('express-validator');
 const { validateEmail } = require('../../utils/validator');
+const withAuth = require('../../utils/auth');
+
+
+
 
 // POST a new user
-router.post('/', async (req, res) => {
+router.post('/', [validateEmail], async (req, res) => {
     try {
         const errors = validationResult(req.body.email)
         if (!errors.isEmpty()) {
@@ -48,7 +49,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        // const validPassword = await userData.checkPassword(req.body.password);
+        const validPassword = await userData.checkPassword(req.body.password);
 
         if (!validPassword) {
             res
@@ -82,114 +83,27 @@ router.post('/logout', (req, res) => {
     }
 });
 
-// router.put('/:id', withAuth, async (req, res) => {
-//     try {
-//         const userData = await User.update( 
-//             {
-//                 username: req.body.username,
-//                 firstName: req.body.firstName,
-//                 lastName: req.body.lastName,
-//             },
-//             {
-//                 where: {
-//                     id: req.params.id,
-//                 },
-//             }
-//         );
-            
+// Delete user account
+router.delete('/:id', withAuth, async (req, res) => {
+    try {
+        const userData = await User.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
 
-//         // if (!userData[0]) {
-//         //     res.status(404).json({ message: 'No user found with this id' });
-//         //     return;
-//         // }
+        if (!userData) {
+            res.status(404).json({ message: 'No user found with this id' });
+            return;
+        }
 
-//         res.status(200).json(userData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-// // Change user password
-// // router.put('/password/:id', withAuth, async (req, res) => {
-// //     try {
-// //         const userData = await User.update(req.body, {
-// //             individualHooks: true,
-// //             where: {
-// //                 id: req.params.id
-// //             }
-// //         });
-
-// //         if (!userData[0]) {
-// //             res.status(404).json({ message: 'No user found with this id' });
-// //             return;
-// //         }
-
-// //         res.status(200).json(userData);
-// //     } catch (err) {
-// //         res.status(500).json(err);
-// //     }
-// // });
-
-// // // Change username
-// // router.put('/username/:id', withAuth, async (req, res) => {
-// //     try {
-// //         const userData = await User.update(req.body, {
-// //             individualHooks: true,
-// //             where: {
-// //                 id: req.params.id
-// //             }
-// //         });
-
-// //         if (!userData[0]) {
-// //             res.status(404).json({ message: 'No user found with this id' });
-// //             return;
-// //         }
-
-// //         res.status(200).json(userData);
-// //     } catch (err) {
-// //         res.status(500).json(err);
-// //     }
-// // });
-
-// // // Change first & last name
-// // router.put('/name/:id', withAuth, async (req, res) => {
-// //     try {
-// //         const userData = await User.update(req.body, {
-// //             individualHooks: true,
-// //             where: {
-// //                 id: req.params.id
-// //             }
-// //         });
-
-// //         if (!userData[0]) {
-// //             res.status(404).json({ message: 'No user found with this id' });
-// //             return;
-// //         }   
-
-// //         res.status(200).json(userData);
-// //     } catch (err) {
-// //         res.status(500).json(err);
-// //     }
-// // });
-
-// // // Delete user account
-// // router.delete('/:id', withAuth, async (req, res) => {
-// //     try {
-// //         const userData = await User.destroy({
-// //             where: {
-// //                 id: req.params.id
-// //             }
-// //         });
-
-// //         if (!userData) {
-// //             res.status(404).json({ message: 'No user found with this id' });
-// //             return;
-// //         }
-
-// //         res.status(200).json(userData);
-// //     } catch (err) {
-// //         res.status(500).json(err);
-// //     }
-// // });
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;

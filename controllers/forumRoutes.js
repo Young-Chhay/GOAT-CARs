@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const {Forum, User} = require('../models');
+const withAuth = require('../utils/auth');
+
 
 router.get('/', async (req,res) => {
     try {
@@ -17,7 +19,7 @@ router.get('/', async (req,res) => {
         res.render('forum-main', {
             forums,
             logged_in: req.session.logged_in
-        })
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -167,7 +169,7 @@ router.get('/free-talk', async (req, res) => {
     }
 });
 
-router.get('/view-post/:id', async (req, res) => {
+router.get('/view-post/:id', withAuth, async (req, res) => {
     try {
         const forumData = await Forum.findByPk(req.params.id, {
             include: [
@@ -193,7 +195,7 @@ router.get('/view-post/:id', async (req, res) => {
     
 });
 
-router.get('/new-post', (req, res) => {
+router.get('/new-post', withAuth, (req, res) => {
     res.render('forum-new-post', {
 
         logged_in: req.session.logged_in

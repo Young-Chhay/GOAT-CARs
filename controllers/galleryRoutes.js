@@ -5,14 +5,6 @@ router.get('/', async (req, res) => {
     try {
       // Get all cars inventory and JOIN with user data
       const carData = await Car.findAll({
-
-        // include: [
-        //   {
-        //     model: car,
-        //     attributes: ['year', 'make', 'model' ],
-        //   },
-        // ],
-
       });
 
       // Serialize cardata so the template can read it
